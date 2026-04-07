@@ -6,6 +6,10 @@ let posts = [];
 let activeFilter = 'All';
 let currentPost = null;
 
+// NEW: Pagination State
+let displayedInsightsCount = 6;
+const INSIGHTS_PER_PAGE = 6;
+
 // ─── FIX: Parse Google Sheets Date(year,month,day) → readable string ───
 function parseSheetDate(val) {
   if (typeof val === 'string' && val.startsWith('Date(')) {
@@ -118,10 +122,16 @@ function renderFeaturedPosts() {
   `}).join('');
 }
 
-function renderInsights() {
+function renderInsights(reset = true) {
   const grid = document.getElementById('insightsGrid');
   const noR  = document.getElementById('noResults');
+  const loadMore = document.getElementById('loadMoreContainer');
   if (!grid || !noR) return;
+
+  // Reset the count if we are filtering or searching
+  if (reset) {
+    displayedInsightsCount = INSIGHTS_PER_PAGE;
+  }
 
   const search   = (document.getElementById('searchInput')?.value || '').toLowerCase();
   const filtered = posts.filter(p => {
@@ -136,10 +146,15 @@ function renderInsights() {
   if (!filtered.length) {
     grid.innerHTML = '';
     noR.style.display = 'block';
+    if (loadMore) loadMore.style.display = 'none';
     return;
   }
   noR.style.display = 'none';
-  grid.innerHTML = filtered.map(p => {
+
+  // Slice the filtered array to only show the allowed count
+  const itemsToShow = filtered.slice(0, displayedInsightsCount);
+
+  grid.innerHTML = itemsToShow.map(p => {
     // ─── AI Display Fix ───
     const displayCat = p.category === 'AI' ? 'AI & Tech' : p.category;
     return `
@@ -178,6 +193,22 @@ function renderInsights() {
       </div>
     </div>
   `}).join('');
+
+  // Handle "Load More" button visibility
+  // Handle "Load More" button visibility
+  if (loadMore) {
+    if (displayedInsightsCount >= filtered.length) {
+      loadMore.style.display = 'none';
+    } else {
+      loadMore.style.display = 'flex'; 
+    }
+  }
+}
+
+// NEW: Function to load the next set of insights
+function loadMoreInsights() {
+  displayedInsightsCount += INSIGHTS_PER_PAGE;
+  renderInsights(false); // Pass false so it doesn't reset the count
 }
 
 // ═══════════════════════════════════════════════
