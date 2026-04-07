@@ -527,10 +527,36 @@ section { padding: 88px 32px; }
 .insight-date { font-size: 0.75rem; color: var(--grey-mid); }
 .insight-stats { display: flex; gap: 14px; }
 .insight-stat { display: flex; align-items: center; gap: 5px; font-size: 0.78rem; color: var(--grey-mid); }
+/* ═══════════════════════════════════════════════════════
+   LOAD MORE BUTTON
+═══════════════════════════════════════════════════════ */
+.load-more-container {
+  display: flex ; /* Han-esta3mel important 3ashan ne-force el flexbox */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
 
+/* 3ashan nekhfeeh fel bedaya w nezhero bel JS bs */
+.load-more-container.hidden {
+  display: none !important;
+}
+
+.load-more-btn {
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(46, 125, 209, 0.35); /* El shadow el azra2 el dayem */
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.load-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(46, 125, 209, 0.45); /* Shadow akbar shwaya lma t3dy 3aleha bel mouse */
+}
 /* ═══════════════════════════════════════════════════════
    MODAL
-═══════════════════════════════════════════════════════ */
+═════════════════════════════════════════════════════ */
 .modal-overlay {
   display: none; position: fixed; inset: 0; z-index: 2000;
   background: rgba(7,17,31,0.7);
@@ -762,17 +788,8 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 48px 32
 ═══════════════════════════════════════════════════════ */
 .carousel-container { position: relative; width: 100%; margin-top: 48px; overflow: hidden; padding: 10px 0; }
 .carousel-track { display: flex; gap: 24px; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-.carousel-slide { 
-  min-width: calc(50% - 12px);
-  flex-shrink: 0; 
-}
-.iframe-wrapper { 
-  border-radius: var(--radius-lg); 
-  overflow: hidden; 
-  background: white; 
-  box-shadow: var(--shadow-md); 
-  height: 650px;
-}
+.carousel-slide { min-width: calc(50% - 12px);flex-shrink: 0; }
+.iframe-wrapper { border-radius: var(--radius-lg); overflow: hidden; background: white; box-shadow: var(--shadow-md); height: 650px;}
 .carousel-btn {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;
   background: white; border: 1px solid var(--grey-light); border-radius: 50%;
@@ -844,27 +861,12 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 48px 32
 .post-title, 
 .post-excerpt, 
 .insight-title, 
-.insight-content {
-  unicode-bidi: plaintext;
-  text-align: start;
-}
+.insight-content {unicode-bidi: plaintext;text-align: start;}
 
 /* ═══════════════════════════════════════════════════════
    CUSTOM SVG ICONS
-═══════════════════════════════════════════════════════ */
-.custom-svg-icon {
-  width: 1em;
-  height: 1em;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  display: inline-block;
-  vertical-align: middle;
-  flex-shrink: 0;
-  transition: var(--transition);
-}
+═════════════════════════════════════════════════════ */
+.custom-svg-icon {width: 1em;height: 1em;fill: none;stroke: currentColor;stroke-width: 2;stroke-linecap: round;stroke-linejoin: round;display: inline-block;vertical-align: middle;flex-shrink: 0;transition: var(--transition);}
 
 .value-icon { margin-bottom: 12px; color: var(--accent-bright); }
 .about-info-icon { margin-top: 3px; color: var(--accent-bright); }
@@ -880,36 +882,48 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 48px 32
   .posts-grid     { grid-template-columns: repeat(2, 1fr); }
   .about-grid     { grid-template-columns: 1fr; margin-top: 20px; }
   .about-sidebar  { position: static; }
-  .about-portrait { max-width: 260px; aspect-ratio: 1/1; margin: 0 auto 24px auto; }
+  .about-portrait {max-width: 320px;aspect-ratio: 4/5;margin: 0 auto 24px auto;}
+  .about-portrait-initials img { object-position: center top; }
   #page-about section:nth-of-type(2) { padding-top: 36px; }
   .contact-grid   { grid-template-columns: 1fr; }
   .carousel-slide { min-width: calc(50% - 12px); }
 }
 
+/* ═══════════════════════════════════════════════════════
+   MOBILE VIEW (MAX-WIDTH: 768px)
+═══════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   section { padding: 48px 20px; }
   .nav-inner { padding: 0 20px; }
   .nav-links { display: none; }
   .hamburger { display: block; }
+
+  /* ── Fix 2: Centre the entire Home / Hero section on mobile ── */
+  .hero-inner {display: flex;flex-direction: column;align-items: center;text-align: center;gap: 40px;padding: 60px 20px;}
+  .hero-content { display: flex; flex-direction: column; align-items: center;}
+  .hero-badge { align-self: center; }
+  .hero-name  { text-align: center; }
+  .hero-title { text-align: center; }
+  .hero-tagline { text-align: center; max-width: 100%; }
+  .hero-stats {justify-content: center;gap: 20px;}
+  .hero-actions {justify-content: center;}
+  .hero-card {width: 100%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;}
+  .hero-card-tags { justify-content: center; }
+  .hero-card-stat { text-align: left; width: 100%; }
+
+  /* ── Fix 4: About section – remove overlap, add proper spacing ── */
   .about-grid { display: flex; flex-direction: column; margin-top: 0; gap: 0; }
   .about-sidebar { width: 100%; z-index: 1; }
-  .about-portrait { max-width: 280px; margin: 0 auto; display: block; position: relative; border-radius: 12px; }
+  .about-portrait {max-width: 280px;aspect-ratio: 4/5;margin: 0 auto 24px auto;display: block;position: relative;border-radius: 12px;}
+  .about-portrait-initials img { object-position: center top; }
   .about-portrait-badge { padding: 10px 12px !important; bottom: 12px !important; left: 10px !important; right: 10px !important; }
   .about-portrait-badge-title { font-size: 0.85rem !important; }
   .about-portrait-badge-sub { font-size: 0.7rem !important; line-height: 1.2; }
   .about-portrait-badge-line { width: 24px !important; margin-top: 6px !important; }
-  .about-content {
-    margin-top: -60px !important;
-    padding: 30px 20px !important;
-    background: rgba(255, 255, 255, 0.85) !important; 
-    backdrop-filter: blur(10px); 
-    z-index: 2;
-    width: 92%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: var(--shadow-md);
-  }
+  /* Remove negative margin that caused the card to overlap the portrait */
+  .about-info-card { margin-bottom: 24px; }
+  .about-content {margin-top: 0 !important;padding: 0 !important;background: transparent !important;backdrop-filter: none;z-index: auto;width: 100%;margin-left: 0;margin-right: 0;border: none;box-shadow: none;}
+  .about-bio { margin-bottom: 24px; }
   .about-text { font-size: 1rem; line-height: 1.6; }
   .carousel-slide { min-width: 100%; }
 }
