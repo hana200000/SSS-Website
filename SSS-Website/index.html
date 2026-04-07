@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdulmajeed Al Sheraim — Procurement & Supply Chain Leader</title>
+<meta name="description" content="Abdulmajeed Al Sheraim | Procurement Leader, Thought Leader in Strategic Sourcing, Supply Chain, and AI-driven Transformation. Based in Riyadh, Saudi Arabia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" onclick="showPage('home')">
+      <div class="nav-logo-mark">
+        <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
+      </div>
+      Abdulmajeed Al Sheraim
+    </a>
+    <div class="nav-links">
+      <button class="nav-link active" onclick="showPage('home')" id="nav-home">Home</button>
+      <button class="nav-link" onclick="showPage('about')" id="nav-about">About</button>
+      <button class="nav-link" onclick="showPage('insights')" id="nav-insights">Insights</button>
+      <button class="nav-link" onclick="showPage('contact')" id="nav-contact">Contact</button>
+    </div>
+    <button class="nav-cta" onclick="showPage('contact')">Get in Touch</button>
+    <button class="hamburger" onclick="toggleMobile()">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-link" onclick="showPage('home');toggleMobile()">Home</button>
+  <button class="mobile-link" onclick="showPage('about');toggleMobile()">About</button>
+  <button class="mobile-link" onclick="showPage('insights');toggleMobile()">Insights</button>
+  <button class="mobile-link" onclick="showPage('contact');toggleMobile()">Contact</button>
+</div>
+
+<div id="page-home" class="page active">
+<section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Procurement · Supply Chain · AI · Leadership
+        </div>
+        <h1 class="hero-name">
+          Abdulmajeed<br><em>Al Sheraim</em>
+        </h1>
+        <p class="hero-title">Strategic Sourcing & Procurement Leader · Riyadh, Saudi Arabia</p>
+        <p class="hero-tagline">
+          <strong>Transforming supply chains, elevating procurement strategies,</strong> and driving business excellence across the Kingdom and beyond. Aligned with Saudi Vision 2030.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">14+</div>
+            <div class="hero-stat-label">Years Experience</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">LinkedIn Followers</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">1st</div>
+            <div class="hero-stat-label">Arabic Procurement Dict.</div>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="showPage('insights')">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Read Insights
+          </button>
+          <a class="btn-outline" href="https://www.linkedin.com/in/abdulmajeed-alsheraim/" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Follow on LinkedIn
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="hero-card">
+          <div class="hero-avatar">
+            <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
+          </div>
+          <div class="hero-card-name">Abdulmajeed Al Sheraim</div>
+          <div class="hero-card-title">Contracts, Procurement, and Supply Chain Portfolio Director · Riyadh, KSA</div>
+         <div class="hero-card-tags">
+            <span class="tag hero-tag cat-procurement" onclick="filterByTag('Procurement')">Procurement</span>
+            <span class="tag hero-tag cat-supplychain" onclick="filterByTag('Supply Chain')">Supply Chain</span>
+            <span class="tag hero-tag cat-vision2030" onclick="filterByTag('Vision 2030')">Vision 2030</span>
+            <span class="tag hero-tag cat-ai" onclick="filterByTag('AI')">AI & Tech</span>
+            <span class="tag hero-tag cat-contracts" onclick="filterByTag('Contracts')">Contracts</span>
+            <span class="tag hero-tag cat-leadership" onclick="filterByTag('Leadership')">Leadership</span>
+          </div>
+          <div class="hero-card-stat">
+            <span class="hero-card-stat-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+            <span class="hero-card-stat-text"><strong>GWU</strong> · The George Washington University</span>
+          </div>
+          <div class="hero-card-stat">
+            <span class="hero-card-stat-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+            <span class="hero-card-stat-text"><strong>King Faisal University</strong> · Bachelor's</span>
+          </div>
+          <div class="hero-card-stat">
+            <span class="hero-card-stat-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+            <span class="hero-card-stat-text"><strong>Author</strong> · First Arabic Procurement Dictionary</span>
+          </div>
+          <div class="hero-card-stat">
+            <span class="hero-card-stat-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
+            <span class="hero-card-stat-text"><strong>WorldCC Award</strong> · Excellence & ESG</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="expertise-strip">
+    <div class="expertise-inner">
+      <div class="expertise-item"><span>Strategic Sourcing</span></div>
+      <div class="expertise-dot"></div>
+      <div class="expertise-item"><span>Contract Management</span></div>
+      <div class="expertise-dot"></div>
+      <div class="expertise-item"><span>Procurement Excellence</span></div>
+      <div class="expertise-dot"></div>
+      <div class="expertise-item"><span>Supply Chain Transformation</span></div>
+      <div class="expertise-dot"></div>
+      <div class="expertise-item"><span>AI in Procurement</span></div>
+      <div class="expertise-dot"></div>
+      <div class="expertise-item"><span>Cost Optimization</span></div>
+      <div class="expertise-dot"></div>
+      <div class="expertise-item"><span>Digital Transformation</span></div>
+      <div class="expertise-dot"></div>
+      <div class="expertise-item"><span>Executive Leadership</span></div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text">"As many of us will come to realize — you do not choose a career in procurement. Procurement chooses you."</div>
+    <div class="quote-attr">— <strong>Abdulmajeed Al Sheraim</strong></div>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <p class="section-eyebrow">Top Discussions</p>
+      <h2 class="section-title">Featured <em>Insights</em></h2>
+      <p class="section-sub">A curated collection of highly engaging discussions and professional perspectives directly from Abdulmajeed's LinkedIn network, covering procurement, supply chain, and digital transformation.</p>
+     <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+        
+        <div class="carousel-track" id="featuredCarouselTrack">
+         
+          <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374796966213476352" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374788519812124673" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374177867984683010" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+          
+          <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7377781747784155136" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7352593313960550400" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7341822738187149312" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7340945598793052160" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+<div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7340580182535090177" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+             <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7332037714768297984" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7335204247178731521" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+          
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7329161967569469441" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+
+           <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7329751997744676865" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7325389660199796736" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7319400996764315648" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+          
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7140445337822879744" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+          
+            <div class="carousel-slide">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7102559970289725440" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <button class="btn-primary" onclick="showPage('insights')" style="display:inline-flex;">
+          View All Insights →
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div id="page-about" class="page">
+  <div style="height:68px;background:var(--navy);"></div>
+
+  <section style="background:var(--navy);padding:64px 32px 88px;">
+    <div class="section-inner">
+      <p class="section-eyebrow" style="color:var(--gold-light);">About</p>
+      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);">
+        The <em style="color:var(--gold-light);">Story</em> Behind the Expertise
+      </h1>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);max-width:640px;">
+        A career defined by curiosity, resilience, and a relentless pursuit of excellence — reshaping procurement across the Kingdom and aligning with Saudi Vision 2030.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-sidebar">
+          <div class="about-portrait">
+            <div class="about-portrait-initials">
+              <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
+            </div>
+            <div class="about-portrait-badge">
+              <div class="about-portrait-badge-title">Abdulmajeed Al Sheraim</div>
+              <div class="about-portrait-badge-sub">Strategic Sourcing Leader · Riyadh, KSA</div>
+              <div class="about-portrait-badge-line"></div>
+            </div>
+          </div>
+          <div class="about-info-card">
+            <div class="about-info-row">
+              <span class="about-info-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><div class="about-info-label">Location</div><div class="about-info-value">Riyadh, Saudi Arabia</div></div>
+            </div>
+            <div class="about-info-row">
+              <span class="about-info-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+              <div><div class="about-info-label">Education</div><div class="about-info-value">GWU & King Faisal University</div></div>
+            </div>
+            <div class="about-info-row">
+              <span class="about-info-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span>
+              <div><div class="about-info-label">Current Role</div><div class="about-info-value">Portfolio Director, Strategic Sourcing Sphere</div></div>
+            </div>
+            <div class="about-info-row">
+              <span class="about-info-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg></span>
+              <div><div class="about-info-label">Languages</div><div class="about-info-value">Arabic · English</div></div>
+            </div>
+            <div class="about-info-row">
+              <span class="about-info-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+              <div><div class="about-info-label">Connections</div><div class="about-info-value">500+ LinkedIn</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-main">
+          <div class="about-bio">
+            <strong>Abdulmajeed Al Sheraim is one of Saudi Arabia's foremost voices in strategic procurement, supply chain transformation, and contract management.</strong> 
+            <br><br>
+            Over two decades, he has risen through the ranks of procurement — from early roles at Saudi Aramco to becoming the Contracts, Procurement, and Supply Chain Portfolio Director at Strategic Sourcing Sphere, where he leads enterprise sourcing strategies driving millions in value. His expertise spans the full procurement lifecycle: vendor selection, contract negotiation, risk management, supplier governance, ESG integration, and digital transformation. He is a practitioner who thinks like a strategist, and a leader who mentors like a teacher.
+            <br><br>
+            As a Portfolio Director at <strong>Strategic Sourcing Sphere</strong>, Abdulmajeed helps organizations unlock value from their procurement and contracting functions, with a proven track record in major infrastructure projects across Saudi Arabia. His work earned national recognition for enhancing sustainable contracting practices aligned with <strong>Saudi Vision 2030</strong> goals in ESG, supplier diversity, and economic localization.
+            <br><br>
+            Abdulmajeed is also a published author — co-creator of the <strong>first-of-its-kind Arabic Contracts, Procurement, and Supply Chain Dictionary</strong>, published by King Salman Global Academy for Arabic Language. This landmark publication sets a new standard for professional terminology in Arabic-speaking markets globally.
+          </div>
+
+          <h3 class="about-section-title">Career Journey</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+              <div class="timeline-content">
+                <div class="timeline-role">Contracts, Procurement, and Supply Chain Portfolio Director</div>
+                <div class="timeline-org">Strategic Sourcing Sphere</div>
+                <div class="timeline-period">Feb 2022 – Present · Riyadh, Saudi Arabia</div>
+                <div class="timeline-desc">Leading strategic sourcing, contract management, and supply chain optimization for major clients across infrastructure, energy, and public sector. Increased supply chain performance by 25% through data-driven procurement strategies.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line" style="display:none;"></div></div>
+              <div class="timeline-content">
+                <div class="timeline-role">Procurement and Contract Portfolio Manager</div>
+                <div class="timeline-org">Saudi Aramco</div>
+                <div class="timeline-period">Oct 2012 – Jan 2022 · Dhahran, Saudi Arabia</div>
+                <div class="timeline-desc">Enhanced schedule adherence by 40% through advanced sourcing strategies. Saved 25% against budget by deploying innovative contracting and procurement strategies, generating significant savings through market research and execution.</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="about-section-title">Vision & Values</h3>
+         <div class="values-grid">
+            <div class="value-card">
+              <div class="value-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+              <div class="value-title">Excellence Beyond the Award</div>
+              <div class="value-desc">True procurement value is realized after contracts are signed. Abdulmajeed's philosophy centers on post-award excellence and transformative outcomes.</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+              <div class="value-title">Sustainable Sourcing</div>
+              <div class="value-desc">Integrating ESG principles, supplier diversity, and ethical sourcing into every procurement decision — building supply chains that last.</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div class="value-title">Mentorship & Legacy</div>
+              <div class="value-desc">"You don't need to be a scientist or an engineer to work in procurement—but you do need to be curious, resourceful, and committed to quality." Investing in the next generation of procurement professionals.</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M3 5h4"/></svg></div>
+              <div class="value-title">AI-Driven Transformation</div>
+              <div class="value-desc">Leveraging artificial intelligence and digital tools to reimagine procurement processes, supplier analytics, and contract intelligence.</div>
+            </div>
+          </div>
+
+          <h3 class="about-section-title">Key Achievements</h3>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="achievement-card">
+              <span style="font-size:1.4rem;flex-shrink:0;color:var(--accent-bright);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
+              <div>
+                <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:4px;">FIDIC Certified Contract Manager</div>
+                <div style="font-size:0.82rem;color:var(--text-secondary);">Achieved prestigious international certification from FIDIC, demonstrating elite capability in managing and administering complex global engineering and construction contracts.</div>
+              </div>
+            </div>
+            <div class="achievement-card">
+              <span style="font-size:1.4rem;flex-shrink:0;color:var(--accent-bright);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+              <div>
+                <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:4px;">First Arabic Procurement & Supply Chain Dictionary</div>
+                <div style="font-size:0.82rem;color:var(--text-secondary);">Co-authored and published by King Salman Global Academy for Arabic Language — a pioneering reference setting international terminology standards for Arabic-speaking markets.</div>
+              </div>
+            </div>
+            <div class="achievement-card">
+              <span style="font-size:1.4rem;flex-shrink:0;color:var(--accent-bright);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+              <div>
+                <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:4px;">ESG Sustainable Contracting Recognition</div>
+                <div style="font-size:0.82rem;color:var(--text-secondary);">Recognized for enhancing sustainable contracting through improved governance, ESG alignment, supplier diversity, and digital contract management — supporting Vision 2030 goals.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="page-insights" class="page">
+  <div style="height:68px;background:var(--navy);"></div>
+
+  <section style="background:var(--navy);padding:64px 32px 88px;">
+    <div class="section-inner">
+      <p class="section-eyebrow" style="color:var(--gold-light);">Insights & Perspectives</p>
+      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);">
+        Thought Leadership on <em style="color:var(--gold-light);">Procurement & Strategy</em>
+      </h1>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);">
+        Original perspectives on procurement excellence, supply chain strategy, AI transformation, and leadership — drawn from two decades at the forefront of the industry.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="insights-controls">
+        <div class="search-bar">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="text" id="searchInput" placeholder="Search insights…" oninput="filterPosts()">
+        </div>
+        <div class="filter-chips" id="filterChips">
+          <button class="filter-chip active" data-cat="All" onclick="setFilter(this,'All')">All</button>
+          <button class="filter-chip" data-cat="Procurement" onclick="setFilter(this,'Procurement')">Procurement</button>
+          <button class="filter-chip" data-cat="Leadership" onclick="setFilter(this,'Leadership')">Leadership</button>
+          <button class="filter-chip" data-cat="AI" onclick="setFilter(this,'AI')">AI & Tech</button>
+          <button class="filter-chip" data-cat="Supply Chain" onclick="setFilter(this,'Supply Chain')">Supply Chain</button>
+          <button class="filter-chip" data-cat="Vision 2030" onclick="setFilter(this,'Vision 2030')">Vision 2030</button>
+          <button class="filter-chip" data-cat="Contracts" onclick="setFilter(this,'Contracts')">Contracts</button>
+        </div>
+      </div>
+      <div class="insights-grid" id="insightsGrid"></div>
+      <div id="noResults" style="display:none;text-align:center;padding:60px 20px;color:var(--grey-mid);">
+        <div style="font-size:2.5rem;margin-bottom:12px;color:var(--grey-mid);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <div style="font-size:1rem;font-weight:500;color:var(--text-secondary);">No insights found</div>
+        <div style="font-size:0.875rem;margin-top:6px;">Try adjusting your search or filter.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="page-contact" class="page">
+  <div style="height:68px;background:var(--navy);"></div>
+
+  <section style="background:var(--navy);padding:64px 32px 88px;">
+    <div class="section-inner">
+      <p class="section-eyebrow" style="color:var(--gold-light);">Get In Touch</p>
+      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);">
+        Let's Start a <em style="color:var(--gold-light);">Conversation</em>
+      </h1>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);">Whether it's a speaking engagement, collaboration, advisory opportunity, or simply connecting — Abdulmajeed welcomes meaningful professional conversations.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">
+            Abdulmajeed is open to speaking engagements at procurement and supply chain conferences, executive advisory roles, collaborative research, and strategic partnerships. Reach out through any of the channels below.
+          </p>
+          <div class="contact-links">
+            <a class="contact-link-item" href="https://www.linkedin.com/in/abdulmajeed-alsheraim/" target="_blank">
+              <div class="contact-link-icon" style="background:#EFF6FF;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#1D4ED8"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div>
+                <div class="contact-link-label">LinkedIn</div>
+                <div class="contact-link-value">linkedin.com/in/abdulmajeed-alsheraim</div>
+              </div>
+            </a>
+            <div class="contact-link-item">
+              <div class="contact-link-icon" style="background:#F0FDF4; color:#15803D;">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-link-label">Location</div>
+                <div class="contact-link-value">Riyadh, Saudi Arabia</div>
+              </div>
+            </div>
+            <div class="contact-link-item">
+              <div class="contact-link-icon" style="background:#FFF7ED; color:#C2410C;">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/><line x1="8" x2="16" y1="22" y2="22"/></svg>
+              </div>
+              <div>
+                <div class="contact-link-label">Speaking</div>
+                <div class="contact-link-value">Available for conferences & executive events</div>
+              </div>
+            </div>
+            <div class="contact-link-item">
+              <div class="contact-link-icon" style="background:#FDF4FF; color:#7E22CE;">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <div class="contact-link-label">Advisory</div>
+                <div class="contact-link-value">Strategic procurement & supply chain consulting</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:40px;padding:28px;border-radius:var(--radius-lg);background:var(--navy);color:white;">
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;margin-bottom:12px;">Response Commitment</h4>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.75;">All professional inquiries are reviewed personally. Abdulmajeed typically responds within 2–3 business days. For urgent procurement advisory matters, please indicate the nature of urgency in your message.</p>
+          </div>
+        </div>
+
+        <div class="contact-form" id="contactFormContainer">
+          <h3>Send a Message</h3>
+          <div id="contactFormEl">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="cfFirstName" placeholder="Your first name">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="cfLastName" placeholder="Your last name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="cfEmail" placeholder="you@company.com">
+            </div>
+            <div class="form-group">
+              <label>Company / Organization</label>
+              <input type="text" id="cfCompany" placeholder="Your organization">
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <select id="cfSubject">
+                <option value="">Select a topic…</option>
+                <option>Speaking Engagement</option>
+                <option>Advisory / Consulting</option>
+                <option>Collaboration / Partnership</option>
+                <option>Media / Press</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea id="cfMessage" placeholder="Share the details of your inquiry…"></textarea>
+            </div>
+            <button class="form-submit" onclick="submitForm()">Send Message →</button>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h4>Message Received</h4>
+            <p>Thank you for reaching out. Abdulmajeed will review your message and respond within 2–3 business days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Abdulmajeed Al Sheraim</div>
+    <div class="footer-tagline">Transforming Supply Chains · Elevating Procurement Strategies · Driving Business Growth</div>
+    <div class="footer-links">
+      <span class="footer-link" onclick="showPage('home')">Home</span>
+      <span class="footer-link" onclick="showPage('about')">About</span>
+      <span class="footer-link" onclick="showPage('insights')">Insights</span>
+      <span class="footer-link" onclick="showPage('contact')">Contact</span>
+      <a class="footer-link" href="https://www.linkedin.com/in/abdulmajeed-alsheraim/" target="_blank">LinkedIn</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-copy">© 2026 Abdulmajeed Al Sheraim. All rights reserved. · Riyadh, Saudi Arabia</div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="postModal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalCat"></div>
+      <h2 id="modalTitle" style="font-size:1.2rem;font-weight:600;color:var(--text-primary);margin-top:12px;line-height:1.5;padding-right:40px;"></h2>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:14px;">
+        <div class="insight-avatar">
+          <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
+        </div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:500;">Abdulmajeed Al Sheraim</div>
+          <div id="modalDate" style="font-size:0.75rem;color:var(--grey-mid);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody" style="padding: 0; background: #f3f2ef;"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
