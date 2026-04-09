@@ -258,12 +258,14 @@ nav {
 
 /* ── Hero Card — crisp border, flat Aramco corporate style ── */
 .hero-card {
-  background: rgba(255,255,255,0.05); border-radius: var(--radius-lg);
-  border: 1px solid rgba(255,255,255,0.12);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--grey-light);
   padding: 32px;
+  box-shadow: var(--shadow-lg); /* Elegant deep shadow */
   animation: slideUp 0.7s 0.3s ease both;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Hero Avatar — Aramco Blue border, no gold */
@@ -284,16 +286,42 @@ nav {
 /* Hero card text — Trebuchet MS for name */
 .hero-card-name {
   font-family: 'Trebuchet MS', Trebuchet, sans-serif;
-  font-size: 1.2rem; font-weight: 700; color: white; margin-bottom: 4px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary); /* #323232 */
+  margin-bottom: 4px;
 }
-.hero-card-title { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
-.hero-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+
+.hero-card-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary); /* #5F6369 */
+  margin-bottom: 20px;
+}
+
+/* Tags — Adjusted for readability on white */
+.hero-card-tags { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 8px; 
+  margin-bottom: 24px; 
+}
+
 .tag {
-  padding: 5px 12px; border-radius: 100px; font-size: 0.75rem;
-  background: rgba(0,163,224,0.14); color: var(--aramco-blue);
-  border: 1px solid rgba(0,163,224,0.25); font-weight: 400; transition: var(--transition);
+  padding: 5px 12px; 
+  border-radius: 100px; 
+  font-size: 0.75rem;
+  font-weight: 500; /* Bumped up weight slightly for readability */
+  background: rgba(0,163,224,0.08); /* Light Aramco Blue tint */
+  color: var(--aramco-dark-blue); /* Dark coloured text */
+  border: 1px solid rgba(0,163,224,0.15); 
+  transition: var(--transition);
 }
-.tag:hover { background: rgba(0,163,224,0.24); transform: translateY(-1px); }
+
+.tag:hover { 
+  background: rgba(0,163,224,0.15); 
+  transform: translateY(-1px); 
+}
 /* Removed .tag.gold — replaced with Aramco Green accent */
 .tag.green { background: rgba(132,189,0,0.12); color: var(--aramco-green); border-color: rgba(132,189,0,0.25); }
 .hero-tag {
@@ -308,14 +336,38 @@ nav {
   box-shadow: 0 4px 12px rgba(0,163,224,0.3);
 }
 .hero-card-stat {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px; border-radius: 10px;
-  background: rgba(255,255,255,0.05); margin-bottom: 8px; transition: var(--transition);
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+  padding: 10px 14px; 
+  border-radius: 10px;
+  background: var(--off-white); /* Subtle light grey/blue instead of translucent white */
+  border: 1px solid var(--grey-light);
+  margin-bottom: 8px; 
+  transition: var(--transition);
 }
-.hero-card-stat:hover { background: rgba(0,163,224,0.1); transform: translateX(4px); }
-.hero-card-stat-icon { font-size: 1rem; }
-.hero-card-stat-text { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.hero-card-stat-text strong { color: rgba(255,255,255,0.88); }
+
+.hero-card-stat:hover { 
+  background: var(--white); 
+  border-color: var(--aramco-blue);
+  transform: translateX(4px); 
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-card-stat-icon { 
+  font-size: 1rem; 
+  color: var(--aramco-blue); /* Keep the icon vivid */
+}
+
+.hero-card-stat-text { 
+  font-size: 0.82rem; 
+  color: var(--text-secondary); 
+}
+
+.hero-card-stat-text strong { 
+  color: var(--text-primary); 
+  font-weight: 600;
+}
 
 /* ═══════════════════════════════════════════════════════
    SECTIONS
