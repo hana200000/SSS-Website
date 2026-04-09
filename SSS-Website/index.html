@@ -5,18 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ss-sphere</title>
 <meta name="description" content="Abdulmajeed Al Sheraim | Procurement Leader, Thought Leader in Strategic Sourcing, Supply Chain, and AI-driven Transformation. Based in Riyadh, Saudi Arabia.">
+
+<!-- ═══════════════════════════════════════════════════════
+     GOOGLE FONTS
+     • 'Cormorant Garamond' REMOVED — replaced by 'Trebuchet MS' (web-safe
+       substitute for Aramco's proprietary Manifa Pro2 headline font).
+     • 'DM Sans' retained for body/UI copy (maps to Aramco's Segoe UI role).
+     ═══════════════════════════════════════════════════════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="icon" type="image/x-icon" href="./imgs/1742757129322.jpeg">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="./imgs/FAVICON.png">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+     Nav background changed: dark navy → white/light corporate bar
+     Logo avatar: gold border → Aramco Blue border
+     CTA button:  dark gradient → solid Aramco Blue (#00A3E0)
+     Logo font:   Cormorant Garamond → Trebuchet MS (bold)
+═══════════════════════════════════════════════════════ -->
 <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" onclick="showPage('home')">
       <div class="nav-logo-mark">
-        <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
+        <img src="./imgs/FAVICON3.png" alt="Abdulmajeed Al Sheraim – Logo">
       </div>
       Abdulmajeed Al Sheraim
     </a>
@@ -32,6 +47,8 @@
     </button>
   </div>
 </nav>
+
+<!-- Mobile menu — Aramco Deep Blue background (#0033A0) -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-link" onclick="showPage('home');toggleMobile()">Home</button>
   <button class="mobile-link" onclick="showPage('about');toggleMobile()">About</button>
@@ -39,9 +56,23 @@
   <button class="mobile-link" onclick="showPage('contact');toggleMobile()">Contact</button>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════════════════════ -->
 <div id="page-home" class="page active">
-<section class="hero">
+
+  <!-- ── HERO SECTION ──────────────────────────────────────
+       Background: Aramco Deep Blue (#0033A0) — replaces #07111F
+       .hero-glow & .hero-glow-2: display:none (removed per guidelines)
+       Badge:       Aramco Blue border/text instead of gold
+       Name font:   Trebuchet MS (bold) instead of Cormorant Garamond
+       Italic:      Aramco Blue (#00A3E0) instead of --gold-light
+       Stat nums:   Trebuchet MS bold instead of Cormorant Garamond
+       Avatar:      Aramco Blue border, no gold ring/glow
+  ──────────────────────────────────────────────────────── -->
+  <section class="hero">
     <div class="hero-grid"></div>
+    <!-- Glow elements left in HTML but hidden via CSS (display:none) -->
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
     <div class="hero-inner">
@@ -74,24 +105,29 @@
           </div>
         </div>
         <div class="hero-actions">
+          <!-- btn-primary: solid Aramco Blue (#00A3E0) — replaces dark gradient -->
           <button class="btn-primary" onclick="showPage('insights')">
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             Read Insights
           </button>
+          <!-- btn-outline: transparent with white border — unchanged for dark bg -->
           <a class="btn-outline" href="https://www.linkedin.com/in/abdulmajeed-alsheraim/" target="_blank">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             Follow on LinkedIn
           </a>
         </div>
       </div>
+
+      <!-- Profile Card -->
       <div>
         <div class="hero-card">
           <div class="hero-avatar">
             <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
           </div>
+          <!-- Card name font: Trebuchet MS bold — Cormorant Garamond removed -->
           <div class="hero-card-name">Abdulmajeed Al Sheraim</div>
           <div class="hero-card-title">Contracts, Procurement, and Supply Chain Portfolio Director · Riyadh, KSA</div>
-         <div class="hero-card-tags">
+          <div class="hero-card-tags">
             <span class="tag hero-tag cat-procurement" onclick="filterByTag('Procurement')">Procurement</span>
             <span class="tag hero-tag cat-supplychain" onclick="filterByTag('Supply Chain')">Supply Chain</span>
             <span class="tag hero-tag cat-vision2030" onclick="filterByTag('Vision 2030')">Vision 2030</span>
@@ -120,6 +156,7 @@
     </div>
   </section>
 
+  <!-- ── EXPERTISE STRIP — Aramco Deep Blue (#002580) ── -->
   <div class="expertise-strip">
     <div class="expertise-inner">
       <div class="expertise-item"><span>Strategic Sourcing</span></div>
@@ -140,45 +177,47 @@
     </div>
   </div>
 
+  <!-- ── QUOTE BLOCK — Light/off-white corporate background
+       Text: Aramco Deep Blue (#0033A0) — was white on navy
+       Quote attr strong: Aramco Blue (#00A3E0) — was --gold-light
+       Font: Trebuchet MS — was Cormorant Garamond
+  ── -->
   <div class="quote-block">
     <div class="quote-text">"As many of us will come to realize — you do not choose a career in procurement. Procurement chooses you."</div>
     <div class="quote-attr">— <strong>Abdulmajeed Al Sheraim</strong></div>
   </div>
 
+  <!-- ── FEATURED INSIGHTS SECTION — White background ── -->
   <section>
     <div class="section-inner">
       <p class="section-eyebrow">Top Discussions</p>
+      <!-- Section title: Trebuchet MS — Cormorant Garamond removed -->
       <h2 class="section-title">Featured <em>Insights</em></h2>
       <p class="section-sub">A curated collection of highly engaging discussions and professional perspectives directly from Abdulmajeed's LinkedIn network, covering procurement, supply chain, and digital transformation.</p>
-     <div class="carousel-container">
+      <div class="carousel-container">
         <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
-        
-        <div class="carousel-track" id="featuredCarouselTrack">
 
+        <div class="carousel-track" id="featuredCarouselTrack">
           <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374796966213476352" height="100%" width="100%" frameborder="0" allowfullscreen="" loading="lazy" title="Embedded post"></iframe>
             </div>
           </div>
-
           <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374788519812124673" height="100%" width="100%" frameborder="0" allowfullscreen="" loading="lazy" title="Embedded post"></iframe>
             </div>
           </div>
-
           <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374177867984683010" height="100%" width="100%" frameborder="0" allowfullscreen="" loading="lazy" title="Embedded post"></iframe>
             </div>
           </div>
-
           <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7377781747784155136" height="100%" width="100%" frameborder="0" allowfullscreen="" loading="lazy" title="Embedded post"></iframe>
             </div>
           </div>
-
           <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7352593313960550400" height="100%" width="100%" frameborder="0" allowfullscreen="" loading="lazy" title="Embedded post"></iframe>
@@ -189,65 +228,56 @@
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7341822738187149312" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-
-            <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7340945598793052160" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-<div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7340580182535090177" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-             <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7332037714768297984" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-
-            <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7335204247178731521" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-          
-            <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7329161967569469441" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-
-           <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7329751997744676865" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-
-            <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7325389660199796736" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-
-            <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7319400996764315648" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-          
-            <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7140445337822879744" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-          
-            <div class="carousel-slide">
+          <div class="carousel-slide">
             <div class="iframe-wrapper">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7102559970289725440" height="100%" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
           </div>
-
         </div>
 
         <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
@@ -261,18 +291,31 @@
     </div>
   </section>
 
-</div>
+</div><!-- /page-home -->
 
+<!-- ═══════════════════════════════════════════════════════
+     ABOUT PAGE
+     Hero banner:  --navy (#0033A0 Aramco Deep Blue) — was #07111F
+     Eyebrow text: --aramco-blue — was --gold-light
+     Italic/em:    --aramco-blue — was --gold-light
+     Sub text:     rgba(255,255,255,0.6) — unchanged
+     Portrait badge line: Aramco Blue — was gold
+     Font:         Trebuchet MS for headings — Cormorant Garamond removed
+═══════════════════════════════════════════════════════ -->
 <div id="page-about" class="page">
+  <!-- Top spacer — Aramco Deep Blue (#0033A0) -->
   <div style="height:68px;background:var(--navy);"></div>
 
+  <!-- About page hero banner — Aramco Deep Blue background -->
   <section style="background:var(--navy);padding:64px 32px 88px;">
     <div class="section-inner">
-      <p class="section-eyebrow" style="color:var(--gold-light);">About</p>
-      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);">
-        The <em style="color:var(--gold-light);">Story</em> Behind the Expertise
+      <!-- Eyebrow: Aramco Blue (#00A3E0) — was --gold-light -->
+      <p class="section-eyebrow" style="color:var(--aramco-blue);">About</p>
+      <!-- Title: Trebuchet MS — Cormorant Garamond removed -->
+      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);font-family:'Trebuchet MS',Trebuchet,sans-serif;">
+        The <em style="color:var(--aramco-blue);font-style:italic;">Story</em> Behind the Expertise
       </h1>
-      <p class="section-sub" style="color:rgba(255,255,255,0.55);max-width:640px;">
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);max-width:640px;">
         A career defined by curiosity, resilience, and a relentless pursuit of excellence — reshaping procurement across the Kingdom and aligning with Saudi Vision 2030.
       </p>
     </div>
@@ -289,6 +332,7 @@
             <div class="about-portrait-badge">
               <div class="about-portrait-badge-title">Abdulmajeed Al Sheraim</div>
               <div class="about-portrait-badge-sub">Strategic Sourcing Leader · Riyadh, KSA</div>
+              <!-- Accent line: Aramco Blue (#00A3E0) — was --gold -->
               <div class="about-portrait-badge-line"></div>
             </div>
           </div>
@@ -318,7 +362,7 @@
 
         <div class="about-main">
           <div class="about-bio">
-            <strong>Abdulmajeed Al Sheraim is one of Saudi Arabia's foremost voices in strategic procurement, supply chain transformation, and contract management.</strong> 
+            <strong>Abdulmajeed Al Sheraim is one of Saudi Arabia's foremost voices in strategic procurement, supply chain transformation, and contract management.</strong>
             <br><br>
             Over two decades, he has risen through the ranks of procurement — from early roles at Saudi Aramco to becoming the Contracts, Procurement, and Supply Chain Portfolio Director at Strategic Sourcing Sphere, where he leads enterprise sourcing strategies driving millions in value. His expertise spans the full procurement lifecycle: vendor selection, contract negotiation, risk management, supplier governance, ESG integration, and digital transformation. He is a practitioner who thinks like a strategist, and a leader who mentors like a teacher.
             <br><br>
@@ -327,12 +371,14 @@
             Abdulmajeed is also a published author — co-creator of the <strong>first-of-its-kind Arabic Contracts, Procurement, and Supply Chain Dictionary</strong>, published by King Salman Global Academy for Arabic Language. This landmark publication sets a new standard for professional terminology in Arabic-speaking markets globally.
           </div>
 
+          <!-- About section headings: Trebuchet MS — Cormorant Garamond removed -->
           <h3 class="about-section-title">Career Journey</h3>
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
               <div class="timeline-content">
                 <div class="timeline-role">Contracts, Procurement, and Supply Chain Portfolio Director</div>
+                <!-- timeline-org: Aramco Blue (#00A3E0) in CSS -->
                 <div class="timeline-org">Strategic Sourcing Sphere</div>
                 <div class="timeline-period">Feb 2022 – Present · Riyadh, Saudi Arabia</div>
                 <div class="timeline-desc">Leading strategic sourcing, contract management, and supply chain optimization for major clients across infrastructure, energy, and public sector. Increased supply chain performance by 25% through data-driven procurement strategies.</div>
@@ -350,8 +396,9 @@
           </div>
 
           <h3 class="about-section-title">Vision & Values</h3>
-         <div class="values-grid">
+          <div class="values-grid">
             <div class="value-card">
+              <!-- value-icon: Aramco Blue (#00A3E0) in CSS -->
               <div class="value-icon"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
               <div class="value-title">Excellence Beyond the Award</div>
               <div class="value-desc">True procurement value is realized after contracts are signed. Abdulmajeed's philosophy centers on post-award excellence and transformative outcomes.</div>
@@ -375,22 +422,23 @@
 
           <h3 class="about-section-title">Key Achievements</h3>
           <div style="display:flex;flex-direction:column;gap:12px;">
+            <!-- Achievement icon: Aramco Blue (#00A3E0) via var(--aramco-blue) -->
             <div class="achievement-card">
-              <span style="font-size:1.4rem;flex-shrink:0;color:var(--accent-bright);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
+              <span style="font-size:1.4rem;flex-shrink:0;color:var(--aramco-blue);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
               <div>
                 <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:4px;">FIDIC Certified Contract Manager</div>
                 <div style="font-size:0.82rem;color:var(--text-secondary);">Achieved prestigious international certification from FIDIC, demonstrating elite capability in managing and administering complex global engineering and construction contracts.</div>
               </div>
             </div>
             <div class="achievement-card">
-              <span style="font-size:1.4rem;flex-shrink:0;color:var(--accent-bright);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+              <span style="font-size:1.4rem;flex-shrink:0;color:var(--aramco-blue);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
               <div>
                 <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:4px;">First Arabic Procurement & Supply Chain Dictionary</div>
                 <div style="font-size:0.82rem;color:var(--text-secondary);">Co-authored and published by King Salman Global Academy for Arabic Language — a pioneering reference setting international terminology standards for Arabic-speaking markets.</div>
               </div>
             </div>
             <div class="achievement-card">
-              <span style="font-size:1.4rem;flex-shrink:0;color:var(--accent-bright);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+              <span style="font-size:1.4rem;flex-shrink:0;color:var(--aramco-green);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
               <div>
                 <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:4px;">ESG Sustainable Contracting Recognition</div>
                 <div style="font-size:0.82rem;color:var(--text-secondary);">Recognized for enhancing sustainable contracting through improved governance, ESG alignment, supplier diversity, and digital contract management — supporting Vision 2030 goals.</div>
@@ -401,18 +449,27 @@
       </div>
     </div>
   </section>
-</div>
+</div><!-- /page-about -->
 
+<!-- ═══════════════════════════════════════════════════════
+     INSIGHTS PAGE
+     Banner: --navy (#0033A0 Aramco Deep Blue) — was #07111F
+     Eyebrow/em: Aramco Blue — was --gold-light
+     Font: Trebuchet MS — Cormorant Garamond removed
+═══════════════════════════════════════════════════════ -->
 <div id="page-insights" class="page">
   <div style="height:68px;background:var(--navy);"></div>
 
+  <!-- Insights page banner — Aramco Deep Blue -->
   <section style="background:var(--navy);padding:64px 32px 88px;">
     <div class="section-inner">
-      <p class="section-eyebrow" style="color:var(--gold-light);">Insights & Perspectives</p>
-      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);">
-        Thought Leadership on <em style="color:var(--gold-light);">Procurement & Strategy</em>
+      <!-- Eyebrow: Aramco Blue — was --gold-light -->
+      <p class="section-eyebrow" style="color:var(--aramco-blue);">Insights & Perspectives</p>
+      <!-- Title: Trebuchet MS — Cormorant Garamond removed -->
+      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);font-family:'Trebuchet MS',Trebuchet,sans-serif;">
+        Thought Leadership on <em style="color:var(--aramco-blue);font-style:italic;">Procurement & Strategy</em>
       </h1>
-      <p class="section-sub" style="color:rgba(255,255,255,0.55);">
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);">
         Original perspectives on procurement excellence, supply chain strategy, AI transformation, and leadership — drawn from two decades at the forefront of the industry.
       </p>
     </div>
@@ -435,13 +492,13 @@
           <button class="filter-chip" data-cat="Contracts" onclick="setFilter(this,'Contracts')">Contracts</button>
         </div>
       </div>
-    <div class="insights-grid" id="insightsGrid"></div>
-      
+      <div class="insights-grid" id="insightsGrid"></div>
+
       <div id="loadMoreContainer" class="load-more-container">
-  <button class="btn-primary load-more-btn" onclick="loadMoreInsights()">
-    Load More ↓
-  </button>
-</div>
+        <button class="btn-primary load-more-btn" onclick="loadMoreInsights()">
+          Load More ↓
+        </button>
+      </div>
 
       <div id="noResults" style="display:none;text-align:center;padding:60px 20px;color:var(--grey-mid);">
         <div style="font-size:2.5rem;margin-bottom:12px;color:var(--grey-mid);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
@@ -450,18 +507,28 @@
       </div>
     </div>
   </section>
-</div>
+</div><!-- /page-insights -->
 
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT PAGE
+     Banner: --navy (#0033A0 Aramco Deep Blue) — was #07111F
+     Eyebrow/em: Aramco Blue — was --gold-light
+     Response box: --navy (Aramco Deep Blue)
+     Font: Trebuchet MS — Cormorant Garamond removed
+═══════════════════════════════════════════════════════ -->
 <div id="page-contact" class="page">
   <div style="height:68px;background:var(--navy);"></div>
 
+  <!-- Contact page banner — Aramco Deep Blue -->
   <section style="background:var(--navy);padding:64px 32px 88px;">
     <div class="section-inner">
-      <p class="section-eyebrow" style="color:var(--gold-light);">Get In Touch</p>
-      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);">
-        Let's Start a <em style="color:var(--gold-light);">Conversation</em>
+      <!-- Eyebrow: Aramco Blue — was --gold-light -->
+      <p class="section-eyebrow" style="color:var(--aramco-blue);">Get In Touch</p>
+      <!-- Title: Trebuchet MS — Cormorant Garamond removed -->
+      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);font-family:'Trebuchet MS',Trebuchet,sans-serif;">
+        Let's Start a <em style="color:var(--aramco-blue);font-style:italic;">Conversation</em>
       </h1>
-      <p class="section-sub" style="color:rgba(255,255,255,0.55);">Whether it's a speaking engagement, collaboration, advisory opportunity, or simply connecting — Abdulmajeed welcomes meaningful professional conversations.</p>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);">Whether it's a speaking engagement, collaboration, advisory opportunity, or simply connecting — Abdulmajeed welcomes meaningful professional conversations.</p>
     </div>
   </section>
 
@@ -511,13 +578,16 @@
             </div>
           </div>
 
+          <!-- Response commitment box — Aramco Deep Blue (#0033A0) -->
           <div style="margin-top:40px;padding:28px;border-radius:var(--radius-lg);background:var(--navy);color:white;">
-            <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;margin-bottom:12px;">Response Commitment</h4>
-            <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.75;">All professional inquiries are reviewed personally. Abdulmajeed typically responds within 2–3 business days. For urgent procurement advisory matters, please indicate the nature of urgency in your message.</p>
+            <!-- Heading: Trebuchet MS — Cormorant Garamond removed -->
+            <h4 style="font-family:'Trebuchet MS',Trebuchet,sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:12px;">Response Commitment</h4>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.75;">All professional inquiries are reviewed personally. Abdulmajeed typically responds within 2–3 business days. For urgent procurement advisory matters, please indicate the nature of urgency in your message.</p>
           </div>
         </div>
 
         <div class="contact-form" id="contactFormContainer">
+          <!-- Contact form title: Trebuchet MS — Cormorant Garamond removed -->
           <h3>Send a Message</h3>
           <div id="contactFormEl">
             <div class="form-row">
@@ -553,6 +623,7 @@
               <label>Message</label>
               <textarea id="cfMessage" placeholder="Share the details of your inquiry…"></textarea>
             </div>
+            <!-- Submit: Aramco Deep Blue → Aramco Blue gradient via CSS .form-submit -->
             <button class="form-submit" onclick="submitForm()">Send Message →</button>
           </div>
           <div class="form-success" id="formSuccess">
@@ -564,10 +635,18 @@
       </div>
     </div>
   </section>
-</div>
+</div><!-- /page-contact -->
 
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER — Aramco Deep Blue (#0033A0)
+     Footer name font: Trebuchet MS — Cormorant Garamond removed
+═══════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
+    <!-- ↓ FOOTER LOGO / WORDMARK (OPTIONAL)
+         If you want to add the official Aramco or SS-Sphere logo above the name:
+         <img src="./imgs/INSERT_FOOTER_LOGO_HERE.png" alt="Saudi Aramco" style="height:40px;margin-bottom:16px;opacity:0.85;"> -->
+         <img src="./imgs/FAVICON3.png" alt="Saudi Aramco" style="height:40px;margin-bottom:16px;opacity:0.85;">
     <div class="footer-name">Abdulmajeed Al Sheraim</div>
     <div class="footer-tagline">Transforming Supply Chains · Elevating Procurement Strategies · Driving Business Growth</div>
     <div class="footer-links">
@@ -582,6 +661,11 @@
   </div>
 </footer>
 
+<!-- ═══════════════════════════════════════════════════════
+     MODAL
+     Overlay: Aramco Deep Blue tint — was #07111F tint
+     Avatar:  Aramco Blue gradient — was accent gradient
+═══════════════════════════════════════════════════════ -->
 <div class="modal-overlay" id="postModal" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-header">
@@ -589,6 +673,7 @@
       <div id="modalCat"></div>
       <h2 id="modalTitle" style="font-size:1.2rem;font-weight:600;color:var(--text-primary);margin-top:12px;line-height:1.5;padding-right:40px;"></h2>
       <div style="display:flex;align-items:center;gap:12px;margin-top:14px;">
+        <!-- Modal avatar — Aramco Blue gradient (matches .insight-avatar CSS) -->
         <div class="insight-avatar">
           <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
         </div>
