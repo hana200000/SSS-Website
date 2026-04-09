@@ -1,28 +1,55 @@
 /* ═══════════════════════════════════════════════════════
+   SAUDI ARAMCO BRAND GUIDELINES – style.css
+   Colors extracted from Saudi Aramco Brand Guidelines 2021 (v2)
+   Primary Palette:
+     Aramco Blue      #00A3E0  (R0   G163 B224)  Pantone 299C
+     Aramco Dark Blue #0033A0  (R0   G51  B160)  Pantone 286C
+     Aramco Green     #84BD00  (R132 G189 B0  )  Pantone 376C
+     Aramco Dark Green#00843D  (R0   G132 B61 )  Pantone 348C
+     Aramco Gray      #5F6369  (R95  G99  B105)  Pantone Cool Gray 10C
+     Dark Gray        #323232  (R50  G50  B50 )
+   Typography:
+     Headlines : 'Trebuchet MS', Trebuchet, sans-serif
+                 (web-safe substitute for proprietary Manifa Pro2)
+     Body      : 'DM Sans', 'Segoe UI', sans-serif
+═══════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════
    VARIABLES
 ═══════════════════════════════════════════════════════ */
 :root {
-  --navy:          #07111F;
-  --navy-mid:      #0D1E35;
-  --navy-light:    #12294A;
-  --accent:        #1B4F8A;
-  --accent-bright: #2E7DD1;
-  --gold:          #C9A96E;
-  --gold-light:    #E8CFA0;
+  /* ── Saudi Aramco Primary Brand Colors ── */
+  --aramco-blue:       #00A3E0;  /* Aramco Blue / Cyan  – primary interactive */
+  --aramco-dark-blue:  #0033A0;  /* Aramco Dark Blue    – corporate deep blue  */
+  --aramco-green:      #84BD00;  /* Aramco Green        – secondary accent      */
+  --aramco-dark-green: #00843D;  /* Aramco Dark Green   – deep green accent     */
+  --aramco-gray:       #5F6369;  /* Aramco Gray         – muted text/borders    */
+  --aramco-dark-gray:  #323232;  /* Aramco Dark Gray    – primary text          */
+
+  /* ── Semantic Aliases (mapped to Aramco palette) ── */
+  --navy:          #0033A0;  /* Aramco Deep Blue (replaces old custom navy)  */
+  --navy-mid:      #002580;  /* Deeper blue variant – used for strips        */
+  --navy-light:    #0040C0;  /* Mid-blue variant                             */
+  --accent:        #0033A0;  /* Aramco Deep Blue                             */
+  --accent-bright: #00A3E0;  /* Aramco Blue – buttons, highlights, links     */
+
+  /* ── Neutrals ── */
   --white:         #FFFFFF;
   --off-white:     #F5F7FA;
   --grey-light:    #E2E8F0;
   --grey-mid:      #94A3B8;
   --grey-dark:     #475569;
-  --text-primary:  #0F172A;
-  --text-secondary:#475569;
+  --text-primary:  #323232;  /* Aramco Dark Gray */
+  --text-secondary:#5F6369;  /* Aramco Gray      */
   --card-bg:       #FFFFFF;
   --section-alt:   #F8FAFC;
+
+  /* ── Shape & Motion ── */
   --radius:        12px;
   --radius-lg:     20px;
   --shadow-sm:     0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   --shadow-md:     0 4px 16px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-lg:     0 20px 48px rgba(7,17,31,0.12), 0 8px 24px rgba(7,17,31,0.08);
+  --shadow-lg:     0 20px 48px rgba(0,51,160,0.10), 0 8px 24px rgba(0,51,160,0.06);
   --transition:    all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -32,7 +59,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-family: 'DM Sans', 'Segoe UI', -apple-system, sans-serif;
   background: var(--white);
   color: var(--text-primary);
   line-height: 1.65;
@@ -64,14 +91,14 @@ body {
 .page.active { display: block; }
 
 /* ═══════════════════════════════════════════════════════
-   NAV
+   NAV  — White / light corporate bar (Aramco standard)
 ═══════════════════════════════════════════════════════ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(7,17,31,0.96);
+  background: rgba(255,255,255,0.97);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid var(--grey-light);
   transition: var(--transition);
 }
 .nav-inner {
@@ -80,211 +107,215 @@ nav {
   padding: 0 32px; height: 68px;
 }
 .nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem; font-weight: 500; letter-spacing: 0.04em;
-  color: var(--white); text-decoration: none; cursor: pointer;
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: 1.1rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--aramco-dark-blue); text-decoration: none; cursor: pointer;
   display: flex; align-items: center; gap: 10px;
 }
 .nav-logo-mark {
   width: 50px; height: 50px; border-radius: 50%; overflow: hidden;
-  border: 2px solid rgba(201,169,110,0.5);
-  box-shadow: 0 0 0 3px rgba(201,169,110,0.15);
+  border: 2px solid rgba(0,163,224,0.45);
+  box-shadow: 0 0 0 3px rgba(0,163,224,0.12);
   flex-shrink: 0;
-  background: linear-gradient(135deg, #1B4F8A, #2E7DD1);
+  background: linear-gradient(135deg, var(--aramco-dark-blue), var(--aramco-blue));
   transition: var(--transition);
 }
-.nav-logo-mark:hover { box-shadow: 0 0 0 5px rgba(201,169,110,0.25); }
+.nav-logo-mark:hover { box-shadow: 0 0 0 5px rgba(0,163,224,0.22); }
 .nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-link {
   padding: 8px 16px; border-radius: 8px;
-  color: rgba(255,255,255,0.7); font-size: 0.875rem; font-weight: 400;
+  color: var(--aramco-gray); font-size: 0.875rem; font-weight: 400;
   cursor: pointer; transition: var(--transition); border: none; background: transparent;
   letter-spacing: 0.01em;
 }
-.nav-link:hover, .nav-link.active { color: var(--white); background: rgba(255,255,255,0.08); }
+.nav-link:hover, .nav-link.active {
+  color: var(--aramco-dark-blue);
+  background: rgba(0,51,160,0.06);
+}
 
 .nav-cta {
   padding: 9px 20px; border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent-bright), #1557A0);
-  color: white; font-size: 0.875rem; font-weight: 500;
+  background: var(--aramco-blue);
+  color: white; font-size: 0.875rem; font-weight: 600;
   cursor: pointer; border: none; transition: var(--transition); letter-spacing: 0.01em;
 }
-.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(46,125,209,0.35); }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,163,224,0.35); background: var(--aramco-dark-blue); }
 
-.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: white; }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--aramco-dark-blue); }
 .hamburger svg { width: 22px; height: 22px; }
 
 .mobile-menu {
   display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 999;
-  background: rgba(7,17,31,0.98);
+  background: rgba(0,51,160,0.98);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   flex-direction: column; padding: 16px 24px 24px;
 }
 .mobile-menu.open { display: flex; }
 .mobile-link {
-  padding: 12px 8px; color: rgba(255,255,255,0.8); font-size: 1rem;
+  padding: 12px 8px; color: rgba(255,255,255,0.85); font-size: 1rem;
   cursor: pointer; border: none; background: none; text-align: left;
-  border-bottom: 1px solid rgba(255,255,255,0.06); transition: var(--transition);
+  border-bottom: 1px solid rgba(255,255,255,0.08); transition: var(--transition);
 }
 .mobile-link:hover { color: white; }
 
 /* ═══════════════════════════════════════════════════════
-   HERO
+   HERO  — Aramco Deep Blue background
 ═══════════════════════════════════════════════════════ */
 .hero {
   min-height: 100vh; background: var(--navy);
   position: relative; overflow: hidden;
   display: flex; align-items: center; padding-top: 68px;
 }
+/* Subtle grid — Aramco Blue tint, no glow */
 .hero-grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(46,125,209,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(46,125,209,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(0,163,224,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,163,224,0.06) 1px, transparent 1px);
   background-size: 60px 60px;
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
   mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
 }
-.hero-glow {
-  position: absolute; top: -20%; right: -10%;
-  width: 700px; height: 700px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(46,125,209,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-glow-2 {
-  position: absolute; bottom: -20%; left: -10%;
-  width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%);
-  pointer-events: none;
-}
+/* Glowing radial gradients REMOVED — flat corporate Aramco standard */
+.hero-glow   { display: none; }
+.hero-glow-2 { display: none; }
+
 .hero-inner {
   max-width: 1200px; margin: 0 auto; padding: 80px 32px;
   display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center;
   position: relative; z-index: 2;
 }
+/* Badge — Aramco Blue palette instead of gold */
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 14px; border-radius: 100px;
-  border: 1px solid rgba(201,169,110,0.3); background: rgba(201,169,110,0.06);
-  color: var(--gold-light); font-size: 0.78rem; font-weight: 500;
+  border: 1px solid rgba(0,163,224,0.35); background: rgba(0,163,224,0.08);
+  color: var(--aramco-blue); font-size: 0.78rem; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 28px;
   animation: slideDown 0.6s ease both;
 }
-.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--aramco-blue); animation: pulse 2s infinite; }
+
+/* Name — Trebuchet MS (Manifa Pro2 substitute) */
 .hero-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 300; line-height: 1.1;
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 4.6rem); font-weight: 700; line-height: 1.1;
   color: var(--white); letter-spacing: -0.01em;
   animation: slideUp 0.7s 0.1s ease both;
 }
-.hero-name em { font-style: italic; color: var(--gold-light); }
+.hero-name em { font-style: italic; color: var(--aramco-blue); font-weight: 400; }
+
 .hero-title {
-  font-size: 1.05rem; font-weight: 400; color: var(--accent-bright);
+  font-size: 1.05rem; font-weight: 400; color: rgba(255,255,255,0.75);
   margin-top: 16px; letter-spacing: 0.02em;
   animation: slideUp 0.7s 0.2s ease both;
 }
 .hero-tagline {
-  font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.6);
+  font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.6);
   margin-top: 20px; line-height: 1.8; max-width: 520px;
   animation: slideUp 0.7s 0.3s ease both;
 }
-.hero-tagline strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+.hero-tagline strong { color: rgba(255,255,255,0.88); font-weight: 500; }
 .hero-stats {
   display: flex; gap: 32px; margin-top: 40px;
   animation: slideUp 0.7s 0.4s ease both;
 }
 .hero-stat { display: flex; flex-direction: column; }
-.hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 500; color: var(--white); line-height: 1; }
-.hero-stat-label { font-size: 0.78rem; color: var(--grey-mid); margin-top: 4px; letter-spacing: 0.03em; }
-.hero-stat-divider { width: 1px; background: rgba(255,255,255,0.1); align-self: stretch; }
+/* Stat numbers — Trebuchet MS (was Cormorant Garamond) */
+.hero-stat-num {
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: 2.2rem; font-weight: 700; color: var(--white); line-height: 1;
+}
+.hero-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 4px; letter-spacing: 0.03em; }
+.hero-stat-divider { width: 1px; background: rgba(255,255,255,0.12); align-self: stretch; }
 .hero-actions {
   display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap;
   animation: slideUp 0.7s 0.5s ease both;
 }
 
-/* Buttons */
+/* ── Buttons ── */
 .btn-primary {
   padding: 13px 28px; border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent-bright), #1557A0);
-  color: white; font-size: 0.9rem; font-weight: 500;
+  background: var(--aramco-blue);
+  color: white; font-size: 0.9rem; font-weight: 600;
   cursor: pointer; border: none; transition: var(--transition);
   letter-spacing: 0.01em; display: flex; align-items: center; gap: 8px;
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(46,125,209,0.4); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,163,224,0.4); background: var(--aramco-dark-blue); }
+
 .btn-outline {
   padding: 13px 28px; border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.85); font-size: 0.9rem; font-weight: 400;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.88); font-size: 0.9rem; font-weight: 400;
   cursor: pointer; background: transparent; transition: var(--transition);
   letter-spacing: 0.01em; display: flex; align-items: center; gap: 8px;
 }
-.btn-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.4); }
+.btn-outline:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.45); }
 
-/* Hero Card */
+/* ── Hero Card — crisp border, flat Aramco corporate style ── */
 .hero-card {
-  background: rgba(255,255,255,0.04); border-radius: var(--radius-lg);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.05); border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,0.12);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   padding: 32px;
   animation: slideUp 0.7s 0.3s ease both;
 }
 
-/* Hero Avatar photo */
+/* Hero Avatar — Aramco Blue border, no gold */
 .hero-avatar {
   width: 110px; height: 110px; border-radius: 50%; overflow: hidden;
-  border: 3px solid rgba(201,169,110,0.5);
-  box-shadow: 0 0 0 6px rgba(201,169,110,0.1), 0 0 0 12px rgba(46,125,209,0.08);
+  border: 3px solid rgba(0,163,224,0.5);
+  box-shadow: 0 0 0 6px rgba(0,163,224,0.1), 0 0 0 12px rgba(0,51,160,0.08);
   flex-shrink: 0; margin-bottom: 20px;
-  background: linear-gradient(135deg, #1B4F8A, #2E7DD1);
+  background: linear-gradient(135deg, var(--aramco-dark-blue), var(--aramco-blue));
   transition: var(--transition);
 }
 .hero-avatar:hover {
-  box-shadow: 0 0 0 8px rgba(201,169,110,0.2), 0 0 0 16px rgba(46,125,209,0.1);
+  box-shadow: 0 0 0 8px rgba(0,163,224,0.2), 0 0 0 16px rgba(0,51,160,0.1);
   transform: scale(1.04);
 }
 .hero-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
-.hero-card-name { font-family:'Cormorant Garamond',serif; font-size: 1.3rem; color: white; margin-bottom: 4px; }
-.hero-card-title { font-size: 0.8rem; color: var(--grey-mid); margin-bottom: 20px; }
+/* Hero card text — Trebuchet MS for name */
+.hero-card-name {
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: 1.2rem; font-weight: 700; color: white; margin-bottom: 4px;
+}
+.hero-card-title { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
 .hero-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .tag {
   padding: 5px 12px; border-radius: 100px; font-size: 0.75rem;
-  background: rgba(46,125,209,0.12); color: var(--accent-bright);
-  border: 1px solid rgba(46,125,209,0.2); font-weight: 400; transition: var(--transition);
+  background: rgba(0,163,224,0.14); color: var(--aramco-blue);
+  border: 1px solid rgba(0,163,224,0.25); font-weight: 400; transition: var(--transition);
 }
-.tag:hover { background: rgba(46,125,209,0.22); transform: translateY(-1px); }
-.tag.gold { background: rgba(201,169,110,0.1); color: var(--gold-light); border-color: rgba(201,169,110,0.2); }
+.tag:hover { background: rgba(0,163,224,0.24); transform: translateY(-1px); }
+/* Removed .tag.gold — replaced with Aramco Green accent */
+.tag.green { background: rgba(132,189,0,0.12); color: var(--aramco-green); border-color: rgba(132,189,0,0.25); }
 .hero-tag {
   cursor: pointer;
   user-select: none;
 }
 .hero-tag:hover {
-  background: rgba(46,125,209,0.28);
-  border-color: var(--accent-bright);
+  background: rgba(0,163,224,0.28);
+  border-color: var(--aramco-blue);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(46,125,209,0.3);
-}
-.hero-tag.gold:hover {
-  background: rgba(201,169,110,0.28);
-  border-color: var(--gold-light);
-  color: white;
-  box-shadow: 0 4px 12px rgba(201,169,110,0.3);
+  box-shadow: 0 4px 12px rgba(0,163,224,0.3);
 }
 .hero-card-stat {
   display: flex; align-items: center; gap: 10px;
   padding: 10px 14px; border-radius: 10px;
-  background: rgba(255,255,255,0.04); margin-bottom: 8px; transition: var(--transition);
+  background: rgba(255,255,255,0.05); margin-bottom: 8px; transition: var(--transition);
 }
-.hero-card-stat:hover { background: rgba(255,255,255,0.08); transform: translateX(4px); }
+.hero-card-stat:hover { background: rgba(0,163,224,0.1); transform: translateX(4px); }
 .hero-card-stat-icon { font-size: 1rem; }
 .hero-card-stat-text { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.hero-card-stat-text strong { color: rgba(255,255,255,0.85); }
+.hero-card-stat-text strong { color: rgba(255,255,255,0.88); }
 
 /* ═══════════════════════════════════════════════════════
    SECTIONS
@@ -292,15 +323,16 @@ nav {
 section { padding: 88px 32px; }
 .section-inner { max-width: 1200px; margin: 0 auto; }
 .section-eyebrow {
-  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent-bright); margin-bottom: 12px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--aramco-blue); margin-bottom: 12px;
 }
+/* Section title — Trebuchet MS (Manifa Pro2 substitute) */
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 400;
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700;
   color: var(--text-primary); line-height: 1.2; letter-spacing: -0.01em;
 }
-.section-title em { font-style: italic; color: var(--accent); }
+.section-title em { font-style: italic; color: var(--aramco-dark-blue); font-weight: 400; }
 .section-sub { font-size: 1rem; color: var(--text-secondary); margin-top: 12px; max-width: 560px; line-height: 1.75; }
 
 /* ═══════════════════════════════════════════════════════
@@ -312,9 +344,10 @@ section { padding: 88px 32px; }
   border: 1px solid var(--grey-light); padding: 28px;
   transition: var(--transition); cursor: pointer; position: relative; overflow: hidden;
 }
+/* Top accent bar — Aramco Blue-to-Green gradient */
 .post-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--accent-bright), var(--gold));
+  background: linear-gradient(90deg, var(--aramco-blue), var(--aramco-green));
   opacity: 0; transition: var(--transition);
 }
 .post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
@@ -349,12 +382,12 @@ section { padding: 88px 32px; }
 .about-grid { display: grid; grid-template-columns: 380px 1fr; gap: 72px; align-items: start; margin-top: 60px; }
 .about-sidebar { position: sticky; top: 100px; }
 
-/* Desktop Image Styling */
+/* Desktop Image Styling — Aramco Deep Blue gradient */
 .about-portrait {
-  width: 100%; 
-  max-width: 320px; 
-  aspect-ratio: 4/5; 
-  margin: 0 auto 24px auto; 
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4/5;
+  margin: 0 auto 24px auto;
   border-radius: var(--radius-lg);
   background: linear-gradient(160deg, var(--navy-light) 0%, var(--navy) 100%);
   display: flex; align-items: center; justify-content: center;
@@ -362,7 +395,7 @@ section { padding: 88px 32px; }
   transition: var(--transition);
 }
 
-.about-portrait:hover { box-shadow: 0 32px 80px rgba(7,17,31,0.3); transform: translateY(-4px); }
+.about-portrait:hover { box-shadow: 0 32px 80px rgba(0,51,160,0.25); transform: translateY(-4px); }
 .about-portrait-initials { width: 100%; height: 100%; position: absolute; inset: 0; }
 .about-portrait-initials img {
   width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
@@ -371,20 +404,21 @@ section { padding: 88px 32px; }
 .about-portrait:hover .about-portrait-initials img { transform: scale(1.03); }
 .about-portrait::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
-  background: linear-gradient(to top, rgba(7,17,31,0.90) 0%, rgba(7,17,31,0.40) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,33,100,0.90) 0%, rgba(0,33,100,0.40) 60%, transparent 100%);
   pointer-events: none; z-index: 1;
 }
 .about-portrait-badge {
   position: absolute; bottom: 20px; left: 16px; right: 16px;
-  background: rgba(7,17,31,0.82);
+  background: rgba(0,33,100,0.85);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.14);
   border-radius: var(--radius); padding: 16px; z-index: 2;
 }
 .about-portrait-badge-title { font-size: 0.95rem; font-weight: 600; color: #FFFFFF; letter-spacing: 0.01em; }
 .about-portrait-badge-sub { font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-top: 3px; }
-.about-portrait-badge-line { width: 36px; height: 2px; background: var(--gold); margin-top: 10px; border-radius: 2px; }
+/* Accent line — Aramco Blue instead of gold */
+.about-portrait-badge-line { width: 36px; height: 2px; background: var(--aramco-blue); margin-top: 10px; border-radius: 2px; }
 
 .about-info-card {
   background: var(--off-white); border-radius: var(--radius-lg);
@@ -402,24 +436,27 @@ section { padding: 88px 32px; }
 
 .about-bio { font-size: 1.05rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 40px; }
 .about-bio strong { color: var(--text-primary); font-weight: 500; }
+/* Section headings — Trebuchet MS */
 .about-section-title {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400;
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: 1.5rem; font-weight: 700;
   color: var(--text-primary); margin-bottom: 24px; padding-bottom: 16px;
-  border-bottom: 1px solid var(--grey-light);
+  border-bottom: 2px solid var(--aramco-blue);
 }
 .timeline { margin-bottom: 48px; }
 .timeline-item { display: flex; gap: 24px; margin-bottom: 28px; }
 .timeline-marker { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
 .timeline-dot {
   width: 12px; height: 12px; border-radius: 50%;
-  background: var(--accent-bright); border: 2px solid white;
-  box-shadow: 0 0 0 3px rgba(46,125,209,0.2); flex-shrink: 0; transition: var(--transition);
+  background: var(--aramco-blue); border: 2px solid white;
+  box-shadow: 0 0 0 3px rgba(0,163,224,0.2); flex-shrink: 0; transition: var(--transition);
 }
-.timeline-item:hover .timeline-dot { background: var(--gold); box-shadow: 0 0 0 5px rgba(201,169,110,0.2); }
+/* Timeline hover — Aramco Green instead of gold */
+.timeline-item:hover .timeline-dot { background: var(--aramco-green); box-shadow: 0 0 0 5px rgba(132,189,0,0.2); }
 .timeline-line { flex: 1; width: 1px; background: var(--grey-light); margin-top: 4px; }
 .timeline-content { padding-bottom: 8px; flex: 1; }
 .timeline-role { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); }
-.timeline-org { font-size: 0.875rem; color: var(--accent-bright); font-weight: 400; margin-top: 2px; }
+.timeline-org { font-size: 0.875rem; color: var(--aramco-blue); font-weight: 400; margin-top: 2px; }
 .timeline-period { font-size: 0.78rem; color: var(--grey-mid); margin-top: 4px; }
 .timeline-desc { font-size: 0.875rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.7; }
 .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
@@ -428,13 +465,14 @@ section { padding: 88px 32px; }
   background: var(--off-white); border: 1px solid var(--grey-light);
   transition: var(--transition); position: relative; overflow: hidden;
 }
+/* Bottom accent line — Aramco Blue-to-Green gradient */
 .value-card::before {
   content: ''; position: absolute; bottom: 0; left: 0;
   width: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent-bright), var(--gold));
+  background: linear-gradient(90deg, var(--aramco-blue), var(--aramco-green));
   transition: width 0.35s ease;
 }
-.value-card:hover { border-color: var(--accent-bright); background: white; transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.value-card:hover { border-color: var(--aramco-blue); background: white; transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .value-card:hover::before { width: 100%; }
 .value-icon { font-size: 1.5rem; margin-bottom: 12px; }
 .value-title { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
@@ -445,14 +483,15 @@ section { padding: 88px 32px; }
   background: var(--off-white); border: 1px solid var(--grey-light);
   transition: var(--transition); position: relative; overflow: hidden;
 }
+/* Bottom accent — Aramco Blue-to-Green gradient */
 .achievement-card::before {
   content: ''; position: absolute; bottom: 0; left: 0;
   width: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent-bright), var(--gold));
+  background: linear-gradient(90deg, var(--aramco-blue), var(--aramco-green));
   transition: width 0.35s ease;
 }
 .achievement-card:hover {
-  border-color: var(--accent-bright); background: white; 
+  border-color: var(--aramco-blue); background: white;
   transform: translateY(-3px); box-shadow: var(--shadow-md);
 }
 .achievement-card:hover::before { width: 100%; }
@@ -470,9 +509,9 @@ section { padding: 88px 32px; }
   border-radius: 10px; padding: 10px 16px;
   flex: 1; max-width: 360px; transition: var(--transition);
 }
-.search-bar:focus-within { border-color: var(--accent-bright); box-shadow: 0 0 0 3px rgba(46,125,209,0.1); }
+.search-bar:focus-within { border-color: var(--aramco-blue); box-shadow: 0 0 0 3px rgba(0,163,224,0.12); }
 .search-bar svg { width: 16px; height: 16px; color: var(--grey-mid); flex-shrink: 0; }
-.search-bar input { border: none; outline: none; font-size: 0.875rem; color: var(--text-primary); width: 100%; background: transparent; font-family: 'DM Sans', sans-serif; }
+.search-bar input { border: none; outline: none; font-size: 0.875rem; color: var(--text-primary); width: 100%; background: transparent; font-family: 'DM Sans', 'Segoe UI', sans-serif; }
 .search-bar input::placeholder { color: var(--grey-mid); }
 .filter-chips { display: flex; gap: 8px; flex-wrap: wrap; }
 .filter-chip {
@@ -480,9 +519,10 @@ section { padding: 88px 32px; }
   cursor: pointer; border: 1px solid var(--grey-light); background: white;
   color: var(--text-secondary); transition: var(--transition);
 }
+/* Default active/hover — Aramco Blue */
 .filter-chip.active, .filter-chip:hover {
-  background: var(--accent-bright); color: white; border-color: var(--accent-bright);
-  transform: translateY(-1px); box-shadow: 0 4px 12px rgba(46,125,209,0.25);
+  background: var(--aramco-blue); color: white; border-color: var(--aramco-blue);
+  transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,163,224,0.25);
 }
 .insights-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
 .insight-card {
@@ -490,19 +530,20 @@ section { padding: 88px 32px; }
   overflow: hidden; transition: var(--transition); cursor: pointer;
   position: relative;
 }
+/* Bottom accent — Aramco Blue-to-Green gradient */
 .insight-card::before {
   content: ''; position: absolute; bottom: 0; left: 0;
   width: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent-bright), var(--gold));
+  background: linear-gradient(90deg, var(--aramco-blue), var(--aramco-green));
   transition: width 0.35s ease;
 }
-.insight-card:hover { 
-  border-color: var(--accent-bright); 
-  transform: translateY(-3px); 
-  box-shadow: var(--shadow-md); 
+.insight-card:hover {
+  border-color: var(--aramco-blue);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
-.insight-card:hover::before { 
-  width: 100%; 
+.insight-card:hover::before {
+  width: 100%;
 }
 .insight-card-top { padding: 28px 28px 0; }
 .insight-card-body { padding: 20px 28px 24px; }
@@ -518,7 +559,7 @@ section { padding: 88px 32px; }
 .insight-author { display: flex; align-items: center; gap: 10px; }
 .insight-avatar {
   width: 32px; height: 32px; border-radius: 50%; overflow: hidden;
-  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  background: linear-gradient(135deg, var(--aramco-dark-blue), var(--aramco-blue));
   display: flex; align-items: center; justify-content: center;
   font-size: 0.7rem; font-weight: 600; color: white; flex-shrink: 0;
 }
@@ -527,11 +568,12 @@ section { padding: 88px 32px; }
 .insight-date { font-size: 0.75rem; color: var(--grey-mid); }
 .insight-stats { display: flex; gap: 14px; }
 .insight-stat { display: flex; align-items: center; gap: 5px; font-size: 0.78rem; color: var(--grey-mid); }
+
 /* ═══════════════════════════════════════════════════════
    LOAD MORE BUTTON
 ═══════════════════════════════════════════════════════ */
 .load-more-container {
-  display: flex ; /* Han-esta3mel important 3ashan ne-force el flexbox */
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -539,27 +581,27 @@ section { padding: 88px 32px; }
   margin-bottom: 20px;
 }
 
-/* 3ashan nekhfeeh fel bedaya w nezhero bel JS bs */
 .load-more-container.hidden {
   display: none !important;
 }
 
 .load-more-btn {
   margin: 0 auto;
-  box-shadow: 0 8px 24px rgba(46, 125, 209, 0.35); /* El shadow el azra2 el dayem */
+  box-shadow: 0 8px 24px rgba(0,163,224,0.30);
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .load-more-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(46, 125, 209, 0.45); /* Shadow akbar shwaya lma t3dy 3aleha bel mouse */
+  box-shadow: 0 12px 32px rgba(0,163,224,0.42);
 }
+
 /* ═══════════════════════════════════════════════════════
    MODAL
-═════════════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 .modal-overlay {
   display: none; position: fixed; inset: 0; z-index: 2000;
-  background: rgba(7,17,31,0.7);
+  background: rgba(0,51,160,0.60);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   align-items: center; justify-content: center; padding: 24px;
@@ -599,7 +641,7 @@ section { padding: 88px 32px; }
 
 .modal-divider { border: none; height: 1px; background: var(--grey-light); margin: 24px 0; }
 
-/* ── Footer Styling (Likes, Comments, LinkedIn) ── */
+/* ── Footer Styling ── */
 .modal-engagement-footer {
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 32px;
@@ -623,7 +665,7 @@ section { padding: 88px 32px; }
 }
 .modal-linkedin-btn:hover {
   background: #004182; transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+  box-shadow: 0 4px 12px rgba(10,102,194,0.3);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -638,7 +680,7 @@ section { padding: 88px 32px; }
   background: white; text-decoration: none; color: var(--text-primary);
   transition: var(--transition);
 }
-.contact-link-item:hover { border-color: var(--accent-bright); box-shadow: 0 4px 16px rgba(46,125,209,0.1); transform: translateX(6px); }
+.contact-link-item:hover { border-color: var(--aramco-blue); box-shadow: 0 4px 16px rgba(0,163,224,0.12); transform: translateX(6px); }
 .contact-link-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
 .contact-link-label { font-size: 0.78rem; color: var(--grey-mid); text-transform: uppercase; letter-spacing: 0.06em; }
 .contact-link-value { font-size: 0.9rem; font-weight: 500; margin-top: 2px; }
@@ -646,28 +688,33 @@ section { padding: 88px 32px; }
   background: var(--off-white); border-radius: var(--radius-lg);
   padding: 40px; border: 1px solid var(--grey-light);
 }
-.contact-form h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 28px; color: var(--text-primary); }
+/* Contact form title — Trebuchet MS */
+.contact-form h3 {
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: 1.5rem; font-weight: 700; margin-bottom: 28px; color: var(--text-primary);
+}
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; font-size: 0.8rem; font-weight: 500; color: var(--text-primary); margin-bottom: 8px; letter-spacing: 0.02em; }
 .form-group input, .form-group textarea, .form-group select {
   width: 100%; padding: 12px 16px; border-radius: 10px;
   border: 1px solid var(--grey-light); background: white;
-  font-size: 0.9rem; color: var(--text-primary); font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem; color: var(--text-primary); font-family: 'DM Sans', 'Segoe UI', sans-serif;
   transition: var(--transition); outline: none;
 }
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-  border-color: var(--accent-bright); box-shadow: 0 0 0 3px rgba(46,125,209,0.1);
+  border-color: var(--aramco-blue); box-shadow: 0 0 0 3px rgba(0,163,224,0.12);
 }
 .form-group textarea { resize: vertical; min-height: 120px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+/* Submit button — Aramco Deep Blue to Blue gradient */
 .form-submit {
   width: 100%; padding: 14px; border-radius: 10px;
-  background: linear-gradient(135deg, var(--navy-mid), var(--accent));
-  color: white; font-size: 0.9rem; font-weight: 500;
+  background: linear-gradient(135deg, var(--aramco-dark-blue), var(--aramco-blue));
+  color: white; font-size: 0.9rem; font-weight: 600;
   cursor: pointer; border: none; transition: var(--transition);
-  font-family: 'DM Sans', sans-serif; letter-spacing: 0.02em;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif; letter-spacing: 0.02em;
 }
-.form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(7,17,31,0.2); }
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,51,160,0.25); }
 .form-submit:active { transform: translateY(0); }
 .form-success { display: none; text-align: center; padding: 24px; }
 .form-success-icon { font-size: 2.5rem; margin-bottom: 12px; }
@@ -704,13 +751,13 @@ section { padding: 88px 32px; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Toast notification (network errors) ────────────────── */
+/* ─── Toast notification ────────────────── */
 .form-toast {
   position: fixed; bottom: 32px; right: 32px; z-index: 9999;
   display: flex; align-items: flex-start; gap: 12px;
   padding: 16px 20px; border-radius: 12px; max-width: 380px; width: calc(100vw - 48px);
-  box-shadow: 0 8px 32px rgba(7,17,31,0.18), 0 2px 8px rgba(7,17,31,0.1);
-  font-size: 0.875rem; font-family: 'DM Sans', sans-serif; line-height: 1.5;
+  box-shadow: 0 8px 32px rgba(0,51,160,0.18), 0 2px 8px rgba(0,51,160,0.1);
+  font-size: 0.875rem; font-family: 'DM Sans', 'Segoe UI', sans-serif; line-height: 1.5;
   opacity: 0; transform: translateY(12px);
   transition: opacity 0.28s cubic-bezier(0.4,0,0.2,1), transform 0.28s cubic-bezier(0.4,0,0.2,1);
   pointer-events: none;
@@ -718,25 +765,29 @@ section { padding: 88px 32px; }
 .form-toast--visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .form-toast--error { background: #1C1C2E; border: 1px solid rgba(231,76,60,0.35); color: #F5C6C0; }
 .form-toast--error svg { stroke: #E74C3C; flex-shrink: 0; margin-top: 1px; }
-.form-toast--success { background: var(--navy-mid); border: 1px solid rgba(46,125,209,0.35); color: rgba(255,255,255,0.85); }
-.form-toast--success svg { stroke: #2E7DD1; flex-shrink: 0; margin-top: 1px; }
+.form-toast--success { background: var(--navy-mid); border: 1px solid rgba(0,163,224,0.35); color: rgba(255,255,255,0.85); }
+.form-toast--success svg { stroke: var(--aramco-blue); flex-shrink: 0; margin-top: 1px; }
 
 @media (max-width: 480px) {
   .form-toast { bottom: 20px; right: 16px; left: 16px; width: auto; }
 }
 
 /* ═══════════════════════════════════════════════════════
-   FOOTER
+   FOOTER — Aramco Deep Blue
 ═══════════════════════════════════════════════════════ */
 footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 48px 32px; text-align: center; }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
-.footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: white; margin-bottom: 8px; }
+/* Footer name — Trebuchet MS */
+.footer-name {
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: 1.4rem; font-weight: 700; color: white; margin-bottom: 8px;
+}
 .footer-tagline { font-size: 0.82rem; margin-bottom: 28px; }
 .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
 .footer-link { font-size: 0.82rem; color: rgba(255,255,255,0.5); cursor: pointer; transition: var(--transition); }
 .footer-link:hover { color: white; }
 .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
-.footer-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.1); margin: 20px auto; }
+.footer-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.12); margin: 20px auto; }
 
 /* ═══════════════════════════════════════════════════════
    SECTION VARIANTS
@@ -747,57 +798,61 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 48px 32
 .dark-section .section-sub { color: rgba(255,255,255,0.55); }
 
 /* ═══════════════════════════════════════════════════════
-   EXPERTISE STRIP
+   EXPERTISE STRIP — Aramco Deep Blue
 ═══════════════════════════════════════════════════════ */
 .expertise-strip {
   background: var(--navy-mid); padding: 32px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .expertise-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .expertise-item { display: flex; align-items: center; gap: 8px; padding: 8px 16px; }
-.expertise-item span { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-weight: 400; transition: var(--transition); }
-.expertise-item:hover span { color: var(--gold-light); }
+.expertise-item span { font-size: 0.82rem; color: rgba(255,255,255,0.6); font-weight: 400; transition: var(--transition); }
+/* Hover — Aramco Green instead of gold */
+.expertise-item:hover span { color: var(--aramco-green); }
 .expertise-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.2); }
 
 /* ═══════════════════════════════════════════════════════
-   QUOTE BLOCK
+   QUOTE BLOCK — Light / crisp corporate style
 ═══════════════════════════════════════════════════════ */
 .quote-block {
-  padding: 64px 32px; background: var(--navy-light); text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 64px 32px; background: var(--off-white); text-align: center;
+  border-top: 1px solid var(--grey-light);
+  border-bottom: 1px solid var(--grey-light);
   position: relative; overflow: hidden;
 }
+/* Decorative large quote mark — Aramco Blue tint, Trebuchet MS */
 .quote-block::before {
   content: '"'; position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
-  font-family: 'Cormorant Garamond', serif; font-size: 14rem;
-  color: rgba(201,169,110,0.04); line-height: 1; pointer-events: none; user-select: none;
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif; font-size: 14rem;
+  color: rgba(0,163,224,0.06); line-height: 1; pointer-events: none; user-select: none;
 }
+/* Quote text — Aramco Deep Blue on light background, Trebuchet MS */
 .quote-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 300; font-style: italic;
-  color: white; line-height: 1.5; max-width: 800px; margin: 0 auto 20px;
-  opacity: 0.9; position: relative; z-index: 1;
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 400; font-style: italic;
+  color: var(--aramco-dark-blue); line-height: 1.55; max-width: 800px; margin: 0 auto 20px;
+  opacity: 0.92; position: relative; z-index: 1;
 }
 .quote-attr { font-size: 0.82rem; color: var(--grey-mid); letter-spacing: 0.05em; position: relative; z-index: 1; }
-.quote-attr strong { color: var(--gold-light); }
+/* Aramco Blue instead of gold */
+.quote-attr strong { color: var(--aramco-blue); }
 
 /* ═══════════════════════════════════════════════════════
    CAROUSEL
 ═══════════════════════════════════════════════════════ */
 .carousel-container { position: relative; width: 100%; margin-top: 48px; overflow: hidden; padding: 10px 0; }
 .carousel-track { display: flex; gap: 24px; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-.carousel-slide { min-width: calc(50% - 12px);flex-shrink: 0; }
-.iframe-wrapper { border-radius: var(--radius-lg); overflow: hidden; background: white; box-shadow: var(--shadow-md); height: 650px;}
+.carousel-slide { min-width: calc(50% - 12px); flex-shrink: 0; }
+.iframe-wrapper { border-radius: var(--radius-lg); overflow: hidden; background: white; box-shadow: var(--shadow-md); height: 650px; }
 .carousel-btn {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;
   background: white; border: 1px solid var(--grey-light); border-radius: 50%;
   width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
-  cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  color: var(--navy); font-size: 1.2rem; transition: var(--transition);
+  cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  color: var(--aramco-dark-blue); font-size: 1.2rem; transition: var(--transition);
 }
-.carousel-btn:hover { background: var(--accent-bright); color: white; border-color: var(--accent-bright); }
+.carousel-btn:hover { background: var(--aramco-blue); color: white; border-color: var(--aramco-blue); }
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
 
@@ -808,7 +863,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 48px 32
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ═══════════════════════════════════════════════════════
-   HERO TAGS COLORS (MATCHING INSIGHTS)
+   HERO TAG CATEGORY COLORS (MATCHING INSIGHTS)
 ═══════════════════════════════════════════════════════ */
 .hero-tag.cat-procurement { border: 1px solid transparent; }
 .hero-tag.cat-procurement:hover { background: #1D4ED8; color: #fff; border-color: #1D4ED8; box-shadow: 0 4px 12px rgba(29,78,216,0.3); }
@@ -858,23 +913,24 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 48px 32
 /* ═══════════════════════════════════════════════════════
    SMART TEXT ALIGNMENT (ARABIC & ENGLISH)
 ═══════════════════════════════════════════════════════ */
-.post-title, 
-.post-excerpt, 
-.insight-title, 
-.insight-content {unicode-bidi: plaintext;text-align: start;}
+.post-title,
+.post-excerpt,
+.insight-title,
+.insight-content { unicode-bidi: plaintext; text-align: start; }
 
 /* ═══════════════════════════════════════════════════════
    CUSTOM SVG ICONS
-═════════════════════════════════════════════════════ */
-.custom-svg-icon {width: 1em;height: 1em;fill: none;stroke: currentColor;stroke-width: 2;stroke-linecap: round;stroke-linejoin: round;display: inline-block;vertical-align: middle;flex-shrink: 0;transition: var(--transition);}
+═══════════════════════════════════════════════════════ */
+.custom-svg-icon { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: inline-block; vertical-align: middle; flex-shrink: 0; transition: var(--transition); }
 
-.value-icon { margin-bottom: 12px; color: var(--accent-bright); }
-.about-info-icon { margin-top: 3px; color: var(--accent-bright); }
-.hero-card-stat-icon { color: var(--accent-bright); }
-.form-success-icon { color: var(--accent-bright); }
+/* Icon accent colours — Aramco Blue */
+.value-icon       { margin-bottom: 12px; color: var(--aramco-blue); }
+.about-info-icon  { margin-top: 3px;     color: var(--aramco-blue); }
+.hero-card-stat-icon { color: var(--aramco-blue); }
+.form-success-icon   { color: var(--aramco-green); }
 
 /* ═══════════════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — DO NOT MODIFY (preserved as-is)
 ═══════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .hero-inner     { grid-template-columns: 1fr; gap: 48px; }
