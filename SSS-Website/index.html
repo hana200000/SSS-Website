@@ -13,7 +13,7 @@
      • 'DM Sans' retained for body/UI copy (maps to Aramco's Segoe UI role).
      ═══════════════════════════════════════════════════════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="icon" type="image/x-icon" href="./imgs/FAVICON.png">
+<link rel="icon" type="image/x-icon" href="./imgs/logo3.png">
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -31,15 +31,21 @@
   <div class="nav-inner">
     <a class="nav-logo" onclick="showPage('home')">
       <div class="nav-logo-mark">
-        <img src="./imgs/FAVICON3.png" alt="Abdulmajeed Al Sheraim – Logo">
+        <img src="./imgs/logo1.png" alt="Abdulmajeed Al Sheraim – Logo">
       </div>
-      strategic sourcing sphere
+      <div class="nav-logo-text">
+        <span style="color: var(--aramco-green);">STRATEGIC</span>
+        <span style="color: var(--aramco-blue);">SOURCING</span>
+        <span style="color: var(--aramco-dark-blue);">SPHERE</span>
+      </div>
     </a>
     <div class="nav-links">
-      <button class="nav-link active" onclick="showPage('home')" id="nav-home">Home</button>
-      <button class="nav-link" onclick="showPage('about')" id="nav-about">About</button>
-      <button class="nav-link" onclick="showPage('insights')" id="nav-insights">Insights</button>
-      <button class="nav-link" onclick="showPage('contact')" id="nav-contact">Contact</button>
+      <button class="nav-link active" onclick="showPage('home')"    id="nav-home">Home</button>
+      <button class="nav-link" onclick="showPage('about')"          id="nav-about">About</button>
+      <button class="nav-link" onclick="showPage('insights')"       id="nav-insights">Insights</button>
+      <button class="nav-link" onclick="showPage('books')"          id="nav-books">Books</button>
+      <button class="nav-link" onclick="showPage('articles')"       id="nav-articles">Articles</button>
+      <button class="nav-link" onclick="showPage('contact')"        id="nav-contact">Contact</button>
     </div>
     <button class="nav-cta" onclick="showPage('contact')">Get in Touch</button>
     <button class="hamburger" onclick="toggleMobile()">
@@ -53,6 +59,8 @@
   <button class="mobile-link" onclick="showPage('home');toggleMobile()">Home</button>
   <button class="mobile-link" onclick="showPage('about');toggleMobile()">About</button>
   <button class="mobile-link" onclick="showPage('insights');toggleMobile()">Insights</button>
+  <button class="mobile-link" onclick="showPage('books');toggleMobile()">Books</button>
+  <button class="mobile-link" onclick="showPage('articles');toggleMobile()">Articles</button>
   <button class="mobile-link" onclick="showPage('contact');toggleMobile()">Contact</button>
 </div>
 
@@ -288,7 +296,18 @@
           View All Insights →
         </button>
       </div>
-    </div>
+
+      <!-- Quick-links to the new dedicated pages -->
+     <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+        <button class="btn-outline-blue" onclick="showPage('books')">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          View Publications &amp; Books →
+        </button>
+        <button class="btn-outline-blue" onclick="showPage('articles')">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          View Original Articles →
+        </button>
+      </div>
   </section>
 
 </div><!-- /page-home -->
@@ -477,33 +496,55 @@
 
   <section>
     <div class="section-inner">
-      <div class="insights-controls">
+
+      <!-- ── Search bar — filters LinkedIn posts on this page ── -->
+     <div class="insights-controls">
         <div class="search-bar">
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <input type="text" id="searchInput" placeholder="Search insights…" oninput="filterPosts()">
         </div>
-        <div class="filter-chips" id="filterChips">
-          <button class="filter-chip active" data-cat="All" onclick="setFilter(this,'All')">All</button>
-          <button class="filter-chip" data-cat="Procurement" onclick="setFilter(this,'Procurement')">Procurement</button>
-          <button class="filter-chip" data-cat="Leadership" onclick="setFilter(this,'Leadership')">Leadership</button>
-          <button class="filter-chip" data-cat="AI" onclick="setFilter(this,'AI')">AI & Tech</button>
-          <button class="filter-chip" data-cat="Supply Chain" onclick="setFilter(this,'Supply Chain')">Supply Chain</button>
-          <button class="filter-chip" data-cat="Vision 2030" onclick="setFilter(this,'Vision 2030')">Vision 2030</button>
-          <button class="filter-chip" data-cat="Contracts" onclick="setFilter(this,'Contracts')">Contracts</button>
+        
+        <div class="filter-chips" id="insightFilterChips">
+          <button class="filter-chip active" onclick="setInsightFilter(this, 'All')">All</button>
+          <button class="filter-chip" data-cat="Procurement" onclick="setInsightFilter(this, 'Procurement')">Procurement</button>
+          <button class="filter-chip" data-cat="Supply Chain" onclick="setInsightFilter(this, 'Supply Chain')">Supply Chain</button>
+          <button class="filter-chip" data-cat="Contracts" onclick="setInsightFilter(this, 'Contracts')">Contracts</button>
+          <button class="filter-chip" data-cat="Leadership" onclick="setInsightFilter(this, 'Leadership')">Leadership</button>
+          <button class="filter-chip" data-cat="Vision 2030" onclick="setInsightFilter(this, 'Vision 2030')">Vision 2030</button>
+          <button class="filter-chip" data-cat="AI" onclick="setInsightFilter(this, 'AI')">AI & Tech</button>
         </div>
       </div>
-      <div class="insights-grid" id="insightsGrid"></div>
 
-      <div id="loadMoreContainer" class="load-more-container">
-        <button class="btn-primary load-more-btn" onclick="loadMoreInsights()">
-          Load More ↓
-        </button>
+      <!-- ══════════════════════════════════════════════════
+           LATEST LINKEDIN POSTS
+           Populated by renderInsights() with posts that have
+           an embed URL (i.e. all non-Articles categories).
+      ══════════════════════════════════════════════════ -->
+      <div class="insights-subsection" id="linkedinSection">
+        <div class="insights-subsection-header">
+          <div class="insights-subsection-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div>
+            <h2 class="insights-subsection-title">Latest LinkedIn Posts</h2>
+            <p class="insights-subsection-sub">Discussions and perspectives shared directly on LinkedIn — covering procurement, supply chain, AI, and leadership.</p>
+          </div>
+        </div>
+        <div class="insights-grid" id="linkedinGrid"></div>
+        <div id="linkedinNoResults" style="display:none;text-align:center;padding:40px 20px;color:var(--grey-mid);">
+          <div style="font-size:2rem;margin-bottom:10px;"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <div style="font-size:0.95rem;font-weight:500;color:var(--text-secondary);">No LinkedIn posts match your search.</div>
+        </div>
+        <div id="linkedinLoadMoreContainer" class="load-more-container" style="display:none;">
+          <button class="btn-primary load-more-btn" onclick="loadMoreLinkedin()">Load More Posts ↓</button>
+        </div>
       </div>
 
+      <!-- Fallback shown when LinkedIn grid is empty -->
       <div id="noResults" style="display:none;text-align:center;padding:60px 20px;color:var(--grey-mid);">
         <div style="font-size:2.5rem;margin-bottom:12px;color:var(--grey-mid);"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
         <div style="font-size:1rem;font-weight:500;color:var(--text-secondary);">No insights found</div>
-        <div style="font-size:0.875rem;margin-top:6px;">Try adjusting your search or filter.</div>
+        <div style="font-size:0.875rem;margin-top:6px;">Try adjusting your search term.</div>
       </div>
     </div>
   </section>
@@ -638,21 +679,363 @@
 </div><!-- /page-contact -->
 
 <!-- ═══════════════════════════════════════════════════════
+     BOOKS PAGE  (#page-books)
+     Routing: showPage('books') → id="nav-books"
+     Pattern: identical hero-banner style to About / Insights pages.
+     Content: the publications-section extracted from page-home.
+═══════════════════════════════════════════════════════ -->
+<div id="page-books" class="page">
+
+  <!-- Spacer — same 68 px as all inner pages so content clears the fixed nav -->
+  <div style="height:68px;background:var(--navy);"></div>
+
+  <!-- ── Hero Banner — Aramco Deep Blue (matches About / Insights) ── -->
+  <section style="background:var(--navy);padding:64px 32px 88px;">
+    <div class="section-inner">
+      <p class="section-eyebrow" style="color:var(--aramco-blue);">Written Work</p>
+      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);font-family:'Trebuchet MS',Trebuchet,sans-serif;">
+        Publications <em style="color:var(--aramco-blue);font-style:italic;">&amp; Books</em>
+      </h1>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);max-width:640px;">
+        Pioneering reference works in Arabic-language procurement, supply chain, and strategic sourcing — designed to elevate professional standards across the Kingdom and beyond.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Publications Grid ─────────────────────────────────────────
+       HOW TO ADD A REAL BOOK:
+         1. Drop the book cover image into ./imgs/
+         2. Replace src="./imgs/PLACEHOLDER_BOOK_N.jpg" with your filename
+         3. Update the <h3> title, <p> description, year and category badge
+         4. Set the href="#" on both buttons to the actual PDF paths:
+              Read Online  → href="./pdfs/YOUR_BOOK_FILENAME.pdf"  target="_blank"
+              Download PDF → href="./pdfs/YOUR_BOOK_FILENAME.pdf"  download
+         5. Duplicate or remove a <div class="book-card"> block to match
+            the number of publications you have.
+  ──────────────────────────────────────────────────────────────── -->
+  <section class="publications-section">
+    <div class="section-inner">
+
+      <!-- ── Publications Subsection Header — matches Insights page layout ── -->
+      <div class="insights-subsection-header">
+        <div class="insights-subsection-icon">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="insights-subsection-title">Featured Publications &amp; Books</h2>
+          <p class="insights-subsection-sub">In-depth reference books, academic research, and comprehensive guides shaping the future of procurement and supply chain management.</p>
+        </div>
+      </div>
+
+      <div class="publications-grid">
+
+        <!-- ── BOOK CARD 1 ──────────────────────────────────── -->
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <img src="./imgs/book1.png"
+                 alt="First-Time-Right Procurement: Substitution of the Paradox Purchasing Savings through First-Time-Right Procurement (FTRP)."
+                 onerror="this.parentElement.classList.add('book-cover--fallback')">
+            <div class="book-cover-overlay">
+              <span class="book-cover-icon">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-meta-row">
+              <span class="book-badge">2015</span>
+              <span class="book-badge book-badge--green">Research / Dissertation</span>
+            </div>
+            <h3 class="book-title">First-Time-Right Procurement: Substitution of the Paradox Purchasing Savings through First-Time-Right Procurement (FTRP).</h3>
+            <p class="book-desc">This research explores how traditional monetary purchasing savings can negatively impact a company's long-term success and proposes a new, quantifiable method based on the "First-Time-Right" principle to measure procurement performance through process quality and time rather than just cost reduction.</p>
+            <div class="book-actions">
+              <a href="./pdfs/First-Time-Right Procurement_ Substitution of the Paradox Purchasing Savings through First-Time-Right Procurement (FTRP) ( PDFDrive ).pdf" class="book-btn book-btn--primary" target="_blank">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Read Online
+              </a>
+              <a href="./pdfs/First-Time-Right Procurement_ Substitution of the Paradox Purchasing Savings through First-Time-Right Procurement (FTRP) ( PDFDrive ).pdf" class="book-btn book-btn--outline" download>
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── BOOK CARD 2 ─────────────────────────────-->
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <img src="./imgs/book2.png"
+                 alt="Procurement Guide and Checklist for Digital Identification Systems."
+                 onerror="this.parentElement.classList.add('book-cover--fallback')">
+            <div class="book-cover-overlay">
+              <span class="book-cover-icon">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-meta-row">
+              <span class="book-badge">2019</span>
+              <span class="book-badge book-badge--green">Guide / Checklist</span>
+            </div>
+            <h3 class="book-title">Procurement Guide and Checklist for Digital Identification Systems.</h3>
+            <p class="book-desc">This guide is designed to assist governments, multilateral institutions, and consultants in systematically assessing their procurement needs and executing the procurement processes for digital identification systems. It provides comprehensive checklists, best practices, and strategic advice to help develop robust requests for proposals (RFPs) and mitigate common risks such as vendor and technology lock-in.</p>
+            <div class="book-actions">
+              <a href="./pdfs/Procurement-Guide-And-Checklist-For-Digital-Identification-Systems.pdf" class="book-btn book-btn--primary" target="_blank">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Read Online
+              </a>
+              <a href="./pdfs/Procurement-Guide-And-Checklist-For-Digital-Identification-Systems.pdf" class="book-btn book-btn--outline" download>
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── BOOK CARD 3 ────────────────────────────────── -->
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <img src="./imgs/book3.png"
+                 alt="The Strategic Procurement Practice Guide: Know-how, Tools and Techniques for Global Buyers"
+                 onerror="this.parentElement.classList.add('book-cover--fallback')">
+            <div class="book-cover-overlay">
+              <span class="book-cover-icon">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-meta-row">
+              <span class="book-badge">2017</span>
+              <span class="book-badge book-badge--green">Guide / Reference</span>
+            </div>
+            <h3 class="book-title">The Strategic Procurement Practice Guide: Know-how, Tools and Techniques for Global Buyers</h3>
+            <p class="book-desc">This guide couples basic scientific knowledge with tried-and-tested purchasing techniques to help procurement professionals optimize supply chains. It serves as a practical tool covering global sourcing, supplier management, and purchasing negotiations for both beginners and experienced global buyers.</p>
+            <div class="book-actions">
+              <a href="./pdfs/The Strategic Procurement Practice Guide_ Know-how, Tools and Techniques for Global Buyers ( PDFDrive ).pdf" class="book-btn book-btn--primary" target="_blank">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Read Online
+              </a>
+              <a href="./pdfs/The Strategic Procurement Practice Guide_ Know-how, Tools and Techniques for Global Buyers ( PDFDrive ).pdf" class="book-btn book-btn--outline" download>
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+         <!-- ── BOOK CARD 4 ──────────────────────────────────── -->
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <img src="./imgs/book4.png"
+                 alt="Procurement Unveiled from Core Concepts to Advanced Strategies: Leaders Reference Book"
+                 onerror="this.parentElement.classList.add('book-cover--fallback')">
+            <div class="book-cover-overlay">
+              <span class="book-cover-icon">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-meta-row">
+              <span class="book-badge">2023</span>
+              <span class="book-badge book-badge--green">Reference Book / Business Guide</span>
+            </div>
+            <h3 class="book-title">Procurement Unveiled from Core Concepts to Advanced Strategies: Leaders Reference Book</h3>
+            <p class="book-desc">Drawing on the author's extensive industry experience, this reference book explores the complexities of procurement to equip leaders with advanced strategies and practical wisdom. It provides insights into innovative, cost-effective purchasing and leadership skills designed to align operations with overarching organizational goals.</p>
+            <div class="book-actions">
+              <a href="./pdfs/Procurement Unveiled from Core Concepts to Advanced Strategies Leaders Reference Book.pdf" class="book-btn book-btn--primary" target="_blank">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Read Online
+              </a>
+              <a href="./pdfs/Procurement Unveiled from Core Concepts to Advanced Strategies Leaders Reference Book.pdf" class="book-btn book-btn--outline" download>
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+          <!-- ── BOOK CARD 5 ──────────────────────────────────── -->
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <img src="./imgs/book5.png"
+                 alt="صياغة العقود: المبادئ الأساسية"
+                 onerror="this.parentElement.classList.add('book-cover--fallback')">
+            <div class="book-cover-overlay">
+              <span class="book-cover-icon">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-meta-row">
+              <span class="book-badge book-badge--green">Guide / Manual</span>
+            </div>
+            <h3 class="book-title">صياغة العقود: المبادئ الأساسية</h3>
+            <p class="book-desc">يقدم هذا الدليل للقراء المبادئ الأساسية لصياغة العقود، موفراً نظرة عامة نظرية للمقاربات القانونية واللغوية، بالإضافة إلى رؤى عملية حول العقود الدولية. كما يقدم نصائح شاملة حول هيكلة الاتفاقيات الفعالة، وتوزيع المخاطر، وفهم الأنواع المختلفة للعقود لضمان الوضوح وتجنب النزاعات القانونية في المستقبل.</p>
+            <div class="book-actions">
+              <a href="./pdfs/المبادئ الأساسية لصياغة العقود.pdf" class="book-btn book-btn--primary" target="_blank">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Read Online
+              </a>
+              <a href="./pdfs/المبادئ الأساسية لصياغة العقود.pdf" class="book-btn book-btn--outline" download>
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- ── BOOK CARD 6 ──────────────────────────────────── -->
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <img src="./imgs/book6.png"
+                 alt="قوانين الغامدي: الفيزياء الخفية للمشتريات وإدارتها"
+                 onerror="this.parentElement.classList.add('book-cover--fallback')">
+            <div class="book-cover-overlay">
+              <span class="book-cover-icon">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-meta-row">
+              <span class="book-badge book-badge--green">Business Reference / Management Guide</span>
+            </div>
+            <h3 class="book-title">قوانين الغامدي: الفيزياء الخفية للمشتريات وإدارتها</h3>
+            <p class="book-desc">استناداً إلى الخبرة العملية الواسعة للمؤلف، يستعرض هذا الكتاب 70 مبدأً كونياً لبناء سياسات أذكى، وفرق أقوى، وأنظمة أكثر استدامة في مجال المشتريات وإدارة سلاسل الإمداد. كما يُعد بمثابة خارطة طريق واقعية لفهم الديناميكيات الخفية للعقود الناجحة والتحولات الرقمية، مع التأكيد على أن القيادة الفعالة تنبع من فهم السلوك البشري وأنماط السوق بدلاً من المفاهيم النظرية.</p>
+            <div class="book-actions">
+              <a href="./pdfs/قانون الغامدي.pdf" class="book-btn book-btn--primary" target="_blank">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Read Online
+              </a>
+              <a href="./pdfs/قانون الغامدي.pdf" class="book-btn book-btn--outline" download>
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- ── BOOK CARD 7 ──────────────────────────────────── -->
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <img src="./imgs/book7.png"
+                 alt="The Procurement and Supply Manager's Desk Reference"
+                 onerror="this.parentElement.classList.add('book-cover--fallback')">
+            <div class="book-cover-overlay">
+              <span class="book-cover-icon">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-meta-row">
+               <span class="book-badge">2007</span>
+              <span class="book-badge book-badge--green">Reference / Guide</span>
+            </div>
+            <h3 class="book-title">The Procurement and Supply Manager's Desk Reference</h3>
+            <p class="book-desc">This comprehensive desk reference serves as an essential road map for supply managers, detailing all aspects of the procurement and sourcing functions. It provides practical tools such as step-by-step guides, checklists, and customizable forms to help professionals select suppliers, measure performance, and optimize their organization's supply chain.</p>
+            <div class="book-actions">
+              <a href="./pdfs/The Procurement and Supply Manager Desk Reference.docx.pdf" class="book-btn book-btn--primary" target="_blank">
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Read Online
+              </a>
+              <a href="./pdfs/The Procurement and Supply Manager Desk Reference.docx.pdf" class="book-btn book-btn--outline" download>
+                <svg class="custom-svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /publications-grid -->
+    </div>
+  </section>
+
+</div><!-- /page-books -->
+
+<!-- ═══════════════════════════════════════════════════════
+     ARTICLES PAGE  (#page-articles)
+     Routing: showPage('articles') → id="nav-articles"
+     Pattern: identical hero-banner style to About / Insights / Books pages.
+     Content: the articlesSection moved from #page-insights.
+═══════════════════════════════════════════════════════ -->
+<div id="page-articles" class="page">
+
+  <!-- Spacer — same 68 px as all inner pages -->
+  <div style="height:68px;background:var(--navy);"></div>
+
+  <!-- ── Hero Banner — Aramco Deep Blue ── -->
+  <section style="background:var(--navy);padding:64px 32px 88px;">
+    <div class="section-inner">
+      <p class="section-eyebrow" style="color:var(--aramco-blue);">Written Perspectives</p>
+      <h1 class="section-title" style="color:white;font-size:clamp(2.4rem,4vw,3.6rem);font-family:'Trebuchet MS',Trebuchet,sans-serif;">
+        Original Articles <em style="color:var(--aramco-blue);font-style:italic;">&amp; Guides</em>
+      </h1>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);max-width:640px;">
+        Comprehensive guides, strategic frameworks, and exclusive insights on procurement excellence — authored directly by Abdulmajeed Al Sheraim.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+
+      <!-- ── Articles search bar ── -->
+      <div class="insights-controls">
+        <div class="search-bar">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="text" id="articlesSearchInput" placeholder="Search articles…" oninput="filterArticles()">
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════
+           ARTICLES GRID — populated by renderInsights() with
+           posts whose category is exactly 'Articles'.
+      ══════════════════════════════════════════════════ -->
+      <div class="insights-subsection" id="articlesSection">
+        <div class="insights-subsection-header">
+          <div class="insights-subsection-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div>
+            <h2 class="insights-subsection-title">Original Articles &amp; Guides</h2>
+            <p class="insights-subsection-sub">Comprehensive guides, strategic frameworks, and exclusive insights on procurement excellence.</p>
+          </div>
+        </div>
+        <div class="insights-grid" id="articlesGrid"></div>
+        <div id="articlesNoResults" style="display:none;text-align:center;padding:40px 20px;color:var(--grey-mid);">
+          <div style="font-size:2rem;margin-bottom:10px;"><svg class="custom-svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <div style="font-size:0.95rem;font-weight:500;color:var(--text-secondary);">No articles match your search.</div>
+        </div>
+        <div id="articlesLoadMoreContainer" class="load-more-container" style="display:none;">
+          <button class="btn-primary load-more-btn" onclick="loadMoreArticles()">Load More Articles ↓</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /page-articles -->
+
+<!-- ═══════════════════════════════════════════════════════
      FOOTER — Aramco Deep Blue (#0033A0)
      Footer name font: Trebuchet MS — Cormorant Garamond removed
 ═══════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
-    <!-- ↓ FOOTER LOGO / WORDMARK (OPTIONAL)
-         If you want to add the official Aramco or SS-Sphere logo above the name:
-         <img src="./imgs/INSERT_FOOTER_LOGO_HERE.png" alt="Saudi Aramco" style="height:40px;margin-bottom:16px;opacity:0.85;"> -->
-         <img src="./imgs/FAVICON3.png" alt="Saudi Aramco" style="height:40px;margin-bottom:16px;opacity:0.85;">
+         <img src="./imgs/logo2.png" alt="Saudi Aramco" style="height:40px;margin-bottom:16px;opacity:0.85;">
     <div class="footer-name">Abdulmajeed Al Sheraim</div>
     <div class="footer-tagline">Transforming Supply Chains · Elevating Procurement Strategies · Driving Business Growth</div>
     <div class="footer-links">
       <span class="footer-link" onclick="showPage('home')">Home</span>
       <span class="footer-link" onclick="showPage('about')">About</span>
       <span class="footer-link" onclick="showPage('insights')">Insights</span>
+      <span class="footer-link" onclick="showPage('books')">Books</span>
+      <span class="footer-link" onclick="showPage('articles')">Articles</span>
       <span class="footer-link" onclick="showPage('contact')">Contact</span>
       <a class="footer-link" href="https://www.linkedin.com/in/abdulmajeed-alsheraim/" target="_blank">LinkedIn</a>
     </div>
@@ -671,16 +1054,20 @@
     <div class="modal-header">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div id="modalCat"></div>
-      <h2 id="modalTitle" style="font-size:1.2rem;font-weight:600;color:var(--text-primary);margin-top:12px;line-height:1.5;padding-right:40px;"></h2>
-      <div style="display:flex;align-items:center;gap:12px;margin-top:14px;">
-        <!-- Modal avatar — Aramco Blue gradient (matches .insight-avatar CSS) -->
-        <div class="insight-avatar">
-          <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
+      <h2 id="modalTitle" dir="auto" style="font-size:1.2rem;font-weight:600;color:var(--text-primary);margin-top:12px;line-height:1.5;padding-right:40px;"></h2>
+      
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;flex-wrap:wrap;gap:12px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="insight-avatar">
+            <img src="./imgs/1742757129322.jpeg" alt="Abdulmajeed Al Sheraim">
+          </div>
+          <div>
+            <div style="font-size:0.85rem;font-weight:500;">Abdulmajeed Al Sheraim</div>
+            <div id="modalDate" style="font-size:0.75rem;color:var(--grey-mid);"></div>
+          </div>
         </div>
-        <div>
-          <div style="font-size:0.85rem;font-weight:500;">Abdulmajeed Al Sheraim</div>
-          <div id="modalDate" style="font-size:0.75rem;color:var(--grey-mid);"></div>
-        </div>
+        
+        <div id="modalTopAction"></div>
       </div>
     </div>
     <div class="modal-body" id="modalBody" style="padding: 0; background: #f3f2ef;"></div>
