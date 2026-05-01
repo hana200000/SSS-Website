@@ -520,7 +520,7 @@ async function submitForm() {
   submitBtn.disabled = true;
 
   try {
-    const response = await fetch('https://formspree.io/f/mzdkykko', {
+    const response = await fetch('https://formspree.io/f/mnjwqkkw', {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify({ Name: firstName + ' ' + lastName, Email: email, Company: company, Subject: subject, Message: message })
